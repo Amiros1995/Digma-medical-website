@@ -6,6 +6,9 @@ export const siteConfig = {
   email: 'info@digmamedical.com',
   linkedIn: 'https://www.linkedin.com/company/digma-medical',
 
+  /** Path to logo in public/ (used in header) */
+  logo: '/images/logo.jpg',
+
   /** Paste your GA4 measurement ID (e.g. G-XXXXXXXXXX) to enable analytics. Leave empty to disable. */
   ga4MeasurementId: '',
 
