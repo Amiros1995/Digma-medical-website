@@ -7,7 +7,7 @@ export const siteConfig = {
   linkedIn: 'https://www.linkedin.com/company/digma-medical',
 
   /** Path to logo in public/ (used in header) */
-  logo: '/images/logo.jpg',
+  logo: '/images/logo.png',
 
   /** Paste your GA4 measurement ID (e.g. G-XXXXXXXXXX) to enable analytics. Leave empty to disable. */
   ga4MeasurementId: '',
