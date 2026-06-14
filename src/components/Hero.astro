@@ -1,0 +1,53 @@
+---
+import siteData from '../data/site.json';
+
+const { hero } = siteData;
+---
+
+<section id="hero" class="gradient-hero relative overflow-hidden">
+  <div class="hero-mesh absolute inset-0 opacity-60" aria-hidden="true"></div>
+  <div class="section-padding relative">
+    <div class="container-wide">
+      <div class="mx-auto max-w-4xl text-center">
+        <p class="reveal mb-4 inline-flex items-center rounded-full border border-primary/20 bg-white/60 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-primary">
+          {hero.eyebrow}
+        </p>
+        <h1 class="reveal reveal-delay-1 font-display text-4xl font-bold tracking-tight text-deep text-balance sm:text-5xl lg:text-6xl">
+          {hero.title}
+        </h1>
+        <p class="reveal reveal-delay-2 mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+          {hero.subtitle}
+        </p>
+        <div class="reveal reveal-delay-3 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a
+            href={hero.primaryCta.href}
+            class="inline-flex w-full items-center justify-center rounded-full bg-highlight px-8 py-3.5 text-base font-semibold text-white shadow-md transition hover:bg-highlight/90 hover:shadow-lg sm:w-auto"
+          >
+            {hero.primaryCta.label}
+          </a>
+          <a
+            href={hero.secondaryCta.href}
+            class="inline-flex w-full items-center justify-center rounded-full border-2 border-deep/20 bg-white/70 px-8 py-3.5 text-base font-semibold text-deep transition hover:border-primary hover:bg-white sm:w-auto"
+          >
+            {hero.secondaryCta.label}
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal mx-auto mt-16 grid max-w-4xl gap-4 sm:grid-cols-3">
+        {
+          [
+            { label: 'Map & Mark', detail: 'Before ablate' },
+            { label: 'Contactless', detail: 'Uniform depth' },
+            { label: 'One procedure', detail: 'Multi-zone treatment' },
+          ].map((item) => (
+            <div class="rounded-2xl border border-white/80 bg-white/70 p-5 text-center shadow-card backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-card-hover">
+              <p class="font-display text-lg font-semibold text-deep">{item.label}</p>
+              <p class="mt-1 text-sm text-muted">{item.detail}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

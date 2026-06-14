@@ -1,0 +1,41 @@
+---
+import galleryData from '../data/gallery.json';
+
+if (!galleryData.enabled || galleryData.photos.length === 0) {
+  return null;
+}
+
+const base = import.meta.env.BASE_URL;
+---
+
+<section id="gallery" class="section-padding bg-surface">
+  <div class="container-wide">
+    <div class="reveal mx-auto max-w-3xl text-center">
+      <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{galleryData.title}</h2>
+      {galleryData.subtitle && <p class="mt-4 text-lg text-muted">{galleryData.subtitle}</p>}
+      <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-primary"></div>
+    </div>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        galleryData.photos.map((photo, i) => (
+          <figure
+            class={`reveal ${i % 3 === 1 ? 'reveal-delay-1' : ''} ${i % 3 === 2 ? 'reveal-delay-2' : ''} overflow-hidden rounded-2xl border border-surface-dark bg-white shadow-card transition hover:shadow-card-hover`}
+          >
+            <img
+              src={`${base}${photo.src.replace(/^\//, '')}`}
+              alt={photo.alt}
+              class="aspect-[4/3] w-full object-cover"
+              loading="lazy"
+              width="640"
+              height="480"
+            />
+            {photo.caption && (
+              <figcaption class="px-4 py-3 text-sm text-muted">{photo.caption}</figcaption>
+            )}
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

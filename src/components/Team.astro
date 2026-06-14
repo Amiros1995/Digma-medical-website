@@ -1,0 +1,49 @@
+---
+import teamData from '../data/team.json';
+---
+
+<section id="team" class="section-padding bg-surface">
+  <div class="container-wide">
+    <div class="reveal mx-auto max-w-3xl text-center">
+      <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{teamData.title}</h2>
+      <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-primary"></div>
+    </div>
+
+    <div class="mt-14 grid gap-8 md:grid-cols-2">
+      {
+        teamData.members.map((member, i) => (
+          <article
+            class={`reveal ${i % 2 === 1 ? 'reveal-delay-1' : ''} flex flex-col rounded-2xl border border-surface-dark bg-white p-8 shadow-card transition hover:shadow-card-hover sm:flex-row sm:gap-6`}
+          >
+            <div class="mb-4 shrink-0 sm:mb-0">
+              {
+                'image' in member && member.image ? (
+                  <img
+                    src={member.image}
+                    alt={`Portrait of ${member.name}`}
+                    class="h-24 w-24 rounded-2xl object-cover"
+                    loading="lazy"
+                    width="96"
+                    height="96"
+                  />
+                ) : (
+                  <div
+                    class="flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-deep font-display text-2xl font-bold text-white"
+                    aria-hidden="true"
+                  >
+                    {member.initials}
+                  </div>
+                )
+              }
+            </div>
+            <div>
+              <h3 class="font-display text-lg font-semibold text-deep">{member.name}</h3>
+              <p class="mt-1 text-sm font-medium text-primary">{member.role}</p>
+              <p class="mt-4 text-sm leading-relaxed text-muted">{member.bio}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

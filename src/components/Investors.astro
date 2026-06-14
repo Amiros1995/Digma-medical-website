@@ -1,0 +1,56 @@
+---
+import siteData from '../data/site.json';
+import { siteConfig } from '../config/site';
+
+const { investors } = siteData;
+const base = import.meta.env.BASE_URL;
+const videoSrc = `${base}videos/investors.mp4`;
+const posterSrc = `${base}images/investors-poster.jpg`;
+---
+
+<section id="investors" class="section-padding bg-white">
+  <div class="container-narrow">
+    <div class="reveal mx-auto max-w-3xl text-center">
+      <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{investors.title}</h2>
+      <p class="mt-4 text-lg text-muted">{investors.subtitle}</p>
+      <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-highlight"></div>
+    </div>
+
+    <div class="reveal mt-12 overflow-hidden rounded-2xl border border-surface-dark bg-deep shadow-card">
+      {
+        siteConfig.investorsVideoAvailable ? (
+          <div>
+            <div class="border-b border-white/10 px-6 py-4">
+              <h3 class="font-display text-lg font-semibold text-white">{investors.videoTitle}</h3>
+            </div>
+            <video
+              class="aspect-video w-full bg-black"
+              controls
+              preload="metadata"
+              poster={posterSrc}
+              aria-label="Digma Medical investors presentation video"
+            >
+              <source src={videoSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        ) : (
+          <div class="flex aspect-video flex-col items-center justify-center gap-4 bg-gradient-to-br from-deep to-deep-dark p-8 text-center">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
+              <svg class="h-8 w-8 text-white/80" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-display text-xl font-semibold text-white">{investors.videoTitle}</h3>
+              <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/70">
+                {investors.placeholderMessage}
+              </p>
+            </div>
+            <code class="rounded-lg bg-black/30 px-4 py-2 text-xs text-white/80">public/videos/investors.mp4</code>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "eyebrow": "Endoscopic GI Ablation Device (EGAD)",
+    "title": "A New Path to GI Health",
+    "subtitle": "Contactless, uniform, depth-controlled laser ablation for Barrett's Esophagus — guided by imaging, designed for the standard endoscopy suite.",
+    "primaryCta": { "label": "Explore EGAD", "href": "#technology" },
+    "secondaryCta": { "label": "Contact Us", "href": "#contact" }
+  },
+  "about": {
+    "title": "Transforming Gastroenterology Care",
+    "paragraphs": [
+      "Digma Medical Ltd. is a medical technology company dedicated to transforming the treatment of gastroenterology pathologies, starting with Barrett's Esophagus (BE) — a pre-cancerous condition that may progress to esophageal adenocarcinoma, one of the most deadly forms of GI cancer.",
+      "We are developing a minimally invasive therapy, the Endoscopic Gastrointestinal Ablation Device (EGAD), that provides contactless, uniform, deep ablation guided by imaging. EGAD is designed to treat the full circumference of the esophagus or isolated patches in a single, safe, and efficient procedure — targeting mucosal tissue while protecting deeper layers such as the muscularis.",
+      "Our product consists of a console and a single-use catheter compatible with the working channel of standard gastrointestinal endoscopes. The EGAD procedure is being developed for performance in a standard GI endoscopy suite without requiring additional imaging equipment.",
+      "The EGAD procedure is currently being evaluated in clinical studies."
+    ],
+    "clinicalCta": "To learn more about our clinical program, please contact us."
+  },
+  "barretts": {
+    "title": "Barrett's Esophagus",
+    "conditionTitle": "The Condition",
+    "conditionPoints": [
+      "Caused by chronic GERD (gastroesophageal reflux disease)",
+      "Often progresses silently and is diagnosed too late",
+      "Symptoms include heartburn, regurgitation, and difficulty swallowing",
+      "Increases risk of esophageal adenocarcinoma (EAC) by up to 125×",
+      "Ablation eliminates abnormal tissue and enables regeneration",
+      "High recurrence with current therapies often requires multiple sessions",
+      "Rising demand for effective, safe, and minimally invasive solutions"
+    ],
+    "solutionTitle": "EGAD: Uniform & Tailored Ablation",
+    "solutionPoints": [
+      "Precision ablation with controlled depth and energy — Map & Mark before Ablate",
+      "\"One and Done\" — single tool, multi-zone treatment",
+      "Effective ablation without full tissue contact",
+      "Shorter procedure; potential to avoid general anesthesia"
+    ]
+  },
+  "technology": {
+    "title": "EGAD Technology",
+    "subtitle": "Minimally invasive LASER-based balloon-catheter delivery",
+    "features": [
+      {
+        "title": "Through-the-scope",
+        "description": "Single-use catheter delivered via the working channel of standard GI endoscopes."
+      },
+      {
+        "title": "Contactless ablation",
+        "description": "Uniform, depth-controlled treatment without requiring full tissue contact."
+      },
+      {
+        "title": "Balloon-centered laser",
+        "description": "Balloon system centralizes the laser with catheter anchoring for stable delivery."
+      },
+      {
+        "title": "Dual-wavelength guidance",
+        "description": "Visible red guide pointer for targeting; NIR therapeutic laser for ablation."
+      },
+      {
+        "title": "Standard GI suite",
+        "description": "Outpatient procedure using standard endoscopy technique — no fluoroscopy required."
+      },
+      {
+        "title": "Selective interaction",
+        "description": "Adjustable tissue interaction designed for various anatomies and treatment zones."
+      }
+    ]
+  },
+  "market": {
+    "title": "Market Opportunity",
+    "subtitle": "Global Barrett's Esophagus ablation devices market",
+    "stats": [
+      { "value": "$1.5B", "label": "Market size by 2033", "detail": "CAGR 7.8%" },
+      { "value": "12M+", "label": "Affected in the US", "detail": "Large addressable population" },
+      { "value": "200K+", "label": "New US cases/year", "detail": "Growing incidence" },
+      { "value": "60%", "label": "EAC share of esophageal cancer", "detail": "6th most common cancer globally" }
+    ],
+    "footnote": "Large unmet need and high recurrence rates with current therapies continue to drive demand for safer, more durable ablation solutions."
+  },
+  "investors": {
+    "title": "Investors",
+    "subtitle": "Digma Medical is a privately held company backed by leading venture capital firms.",
+    "videoTitle": "Company Overview",
+    "placeholderMessage": "Add your investors presentation video as public/videos/investors.mp4, then set investorsVideoAvailable to true in src/config/site.ts."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Reach out for clinical program inquiries, partnerships, or general information.",
+    "submitLabel": "Send Message",
+    "successMessage": "Thank you for your message. We will be in touch shortly.",
+    "fields": {
+      "name": "Full name",
+      "email": "Email address",
+      "subject": "Subject",
+      "message": "Message"
+    }
+  }
+}

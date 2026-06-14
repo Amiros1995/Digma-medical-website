@@ -1,0 +1,29 @@
+{
+  "title": "Leadership Team",
+  "members": [
+    {
+      "name": "Shlomit Chappel-Ram, PhD, MBA",
+      "role": "General Manager",
+      "initials": "SC",
+      "bio": "Dr. Shlomit Chappel-Ram is an accomplished executive with over 20 years of leadership in the medical device and life sciences industries. At Digma Medical, she leads strategic operations, product development, and fundraising efforts for the company's endoscopic laser therapy platform. Prior to Digma, she held senior roles at Nano Dimension, Edwards Lifesciences, and Medinol, driving innovation from early-stage development through commercialization. Dr. Chappel-Ram holds a PhD in Chemistry (Summa Cum Laude) and an MBA in Management."
+    },
+    {
+      "name": "Ilan Ben-Oren",
+      "role": "Co-founder and CTO",
+      "initials": "IB",
+      "bio": "Ilan brings more than 25 years of experience in R&D and management in the medical device industry. In addition to co-founding Digma, he served as founder and CTO of Eximo Medical (acquired by AngioDynamics), CTO of Exalenz Bioscience Ltd. (acquired by Meridian BioScience), and CTO at Oridion Medical (acquired by Covidien). Ilan is the author of more than 60 patents and patent applications in medical technologies and electro-optics. He holds a master's degree in applied physics and the science of materials, summa cum laude, from the Hebrew University of Jerusalem."
+    },
+    {
+      "name": "Dr. Irit Yaniv, MD",
+      "role": "Chairwoman of the Board, Co-Founder",
+      "initials": "IY",
+      "bio": "Dr. Irit Yaniv is the Founding Partner and CEO of Almeda Ventures and Managing Partner at Accelmed Ventures II, with over 25 years of experience in venture capital, pharmaceutical, and biotech industries. As a senior manager, skilled physician, and experienced board member, she combines leadership, decision-making, and business expertise. She holds an MD from Ben-Gurion University and an MBA from Tel Aviv University."
+    },
+    {
+      "name": "Prof. Ohad Etzion, MD",
+      "role": "Scientific Advisory Board Member",
+      "initials": "OE",
+      "bio": "Prof. Ohad Etzion is Director of the Department of Gastroenterology and Liver Diseases at Soroka University Medical Center. He has vast experience leading multicenter, multinational clinical studies and serves as a consultant to multiple companies in the biopharmaceutical and medical device industries."
+    }
+  ]
+}

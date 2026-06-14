@@ -1,0 +1,88 @@
+---
+import { siteConfig, navLinks } from '../config/site';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<header
+  id="site-header"
+  class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-surface/80 backdrop-blur-md transition-all duration-300"
+>
+  <div class="container-wide flex h-16 items-center justify-between px-5 md:h-18 md:px-8">
+    <a href={base} class="group flex items-center gap-3" aria-label={`${siteConfig.name} home`}>
+      <span
+        class="flex h-9 w-9 items-center justify-center rounded-lg bg-deep text-sm font-bold text-white shadow-sm transition group-hover:bg-primary"
+      >
+        D
+      </span>
+      <span class="font-display text-lg font-semibold tracking-tight text-deep">
+        {siteConfig.name}
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="rounded-lg px-3 py-2 text-sm font-medium text-muted transition hover:bg-white/60 hover:text-deep"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="hidden lg:block">
+      <a
+        href="#contact"
+        class="inline-flex items-center rounded-full bg-deep px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-primary hover:shadow-md"
+      >
+        Get in Touch
+      </a>
+    </div>
+
+    <button
+      id="mobile-menu-btn"
+      type="button"
+      class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-surface-dark bg-white/70 text-deep lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Open menu"
+    >
+      <svg id="menu-icon-open" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg id="menu-icon-close" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-surface-dark bg-surface/95 backdrop-blur-md lg:hidden"
+    aria-label="Mobile navigation"
+  >
+    <nav class="container-wide flex flex-col gap-1 px-5 py-4">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="mobile-nav-link rounded-lg px-4 py-3 text-base font-medium text-deep transition hover:bg-white/70"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href="#contact"
+        class="mobile-nav-link mt-2 rounded-full bg-deep px-4 py-3 text-center text-base font-semibold text-white"
+      >
+        Get in Touch
+      </a>
+    </nav>
+  </div>
+</header>
+
+<div class="h-16 md:h-18" aria-hidden="true"></div>

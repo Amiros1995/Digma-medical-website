@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #607d8b;
+  --color-primary-light: #8fa4ae;
+  --color-surface: #e5f0f1;
+  --color-surface-dark: #d4e4e6;
+  --color-deep: #3d5a66;
+  --color-deep-dark: #2a3f48;
+  --color-highlight: #c62828;
+  --color-white: #ffffff;
+  --color-muted: #5a6f78;
+
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 4px 24px -4px rgb(61 90 102 / 0.12);
+  --shadow-card-hover: 0 12px 40px -8px rgb(61 90 102 / 0.2);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface font-sans text-deep antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary/25 text-deep;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-padding {
+    @apply px-5 py-20 md:px-8 lg:px-12 lg:py-28;
+  }
+
+  .container-narrow {
+    @apply mx-auto max-w-6xl;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .gradient-hero {
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 20%, rgb(229 240 241 / 0.9), transparent),
+      radial-gradient(ellipse 60% 50% at 80% 10%, rgb(96 125 139 / 0.15), transparent),
+      radial-gradient(ellipse 50% 40% at 50% 100%, rgb(198 40 40 / 0.06), transparent),
+      linear-gradient(180deg, #f4fafb 0%, #e5f0f1 100%);
+  }
+
+  .hero-mesh {
+    background-image:
+      linear-gradient(rgb(96 125 139 / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(96 125 139 / 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 {
+    transition-delay: 0.1s;
+  }
+  .reveal-delay-2 {
+    transition-delay: 0.2s;
+  }
+  .reveal-delay-3 {
+    transition-delay: 0.3s;
+  }
+}
