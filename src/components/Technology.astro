@@ -17,33 +17,35 @@ const icons = [
 
 <section id="technology" class="section-padding bg-white">
   <div class="container-wide">
-    <div class="reveal mx-auto max-w-3xl text-center">
-      <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{technology.title}</h2>
-      <p class="mt-4 text-lg text-muted">{technology.subtitle}</p>
-      <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-highlight"></div>
+    <div class="reveal grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+      <div class="text-center lg:text-left">
+        <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{technology.title}</h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted">{technology.subtitle}</p>
+        <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-highlight lg:mx-0"></div>
+        {
+          technology.imageCaption && (
+            <p class="mt-6 text-base leading-relaxed text-muted">{technology.imageCaption}</p>
+          )
+        }
+      </div>
+
+      {
+        imageSrc && (
+          <figure class="flex items-center justify-center lg:justify-end">
+            <img
+              src={imageSrc}
+              alt={technology.imageAlt}
+              class="w-full max-w-md object-contain drop-shadow-lg sm:max-w-lg lg:max-w-xl xl:max-w-2xl"
+              loading="lazy"
+              width="800"
+              height="600"
+            />
+          </figure>
+        )
+      }
     </div>
 
-    {
-      imageSrc && (
-        <figure class="reveal mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-surface-dark bg-[#0a0a0a] shadow-card">
-          <img
-            src={imageSrc}
-            alt={technology.imageAlt}
-            class="mx-auto w-full max-h-[420px] object-contain p-6 sm:p-8"
-            loading="lazy"
-            width="960"
-            height="540"
-          />
-          {technology.imageCaption && (
-            <figcaption class="border-t border-white/10 bg-deep px-5 py-3 text-center text-sm text-white/80">
-              {technology.imageCaption}
-            </figcaption>
-          )}
-        </figure>
-      )
-    }
-
-    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         technology.features.map((feature, i) => (
           <article class="reveal group rounded-2xl border border-surface-dark bg-surface/50 p-6 transition hover:-translate-y-1 hover:border-primary/30 hover:bg-white hover:shadow-card-hover">
