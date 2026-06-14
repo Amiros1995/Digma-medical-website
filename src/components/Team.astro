@@ -1,5 +1,7 @@
 ---
 import teamData from '../data/team.json';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <section id="team" class="section-padding bg-surface">
@@ -17,14 +19,14 @@ import teamData from '../data/team.json';
           >
             <div class="mb-4 shrink-0 sm:mb-0">
               {
-                'image' in member && member.image ? (
+                member.image ? (
                   <img
-                    src={member.image}
+                    src={`${base}${member.image.replace(/^\//, '')}`}
                     alt={`Portrait of ${member.name}`}
-                    class="h-24 w-24 rounded-2xl object-cover"
+                    class="h-28 w-28 rounded-2xl object-cover object-top shadow-sm ring-2 ring-surface-dark/50 sm:h-32 sm:w-32"
                     loading="lazy"
-                    width="96"
-                    height="96"
+                    width="128"
+                    height="128"
                   />
                 ) : (
                   <div
