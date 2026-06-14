@@ -3,7 +3,10 @@ import siteData from '../data/site.json';
 
 const { technology } = siteData;
 const base = import.meta.env.BASE_URL;
-const imageSrc = technology.image ? `${base}${technology.image.replace(/^\//, '')}` : null;
+const consoleSrc = technology.image ? `${base}${technology.image.replace(/^\//, '')}` : null;
+const catheterSrc = technology.secondaryImage
+  ? `${base}${technology.secondaryImage.replace(/^\//, '')}`
+  : null;
 
 const icons = [
   'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z',
@@ -17,33 +20,51 @@ const icons = [
 
 <section id="technology" class="section-padding bg-white">
   <div class="container-wide">
-    <div class="reveal grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-      <div class="text-center lg:text-left">
-        <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{technology.title}</h2>
-        <p class="mt-4 text-lg leading-relaxed text-muted">{technology.subtitle}</p>
-        <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-highlight lg:mx-0"></div>
-        {
-          technology.imageCaption && (
-            <p class="mt-6 text-base leading-relaxed text-muted">{technology.imageCaption}</p>
-          )
-        }
-      </div>
-
+    <div class="reveal mx-auto max-w-3xl text-center lg:mx-0 lg:max-w-2xl lg:text-left">
+      <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{technology.title}</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted">{technology.subtitle}</p>
+      <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-highlight lg:mx-0"></div>
       {
-        imageSrc && (
-          <figure class="flex items-center justify-center lg:justify-end">
-            <img
-              src={imageSrc}
-              alt={technology.imageAlt}
-              class="w-full max-w-md object-contain drop-shadow-lg sm:max-w-lg lg:max-w-xl xl:max-w-2xl"
-              loading="lazy"
-              width="800"
-              height="600"
-            />
-          </figure>
+        technology.imageCaption && (
+          <p class="mt-6 text-base leading-relaxed text-muted">{technology.imageCaption}</p>
         )
       }
     </div>
+
+    {
+      (consoleSrc || catheterSrc) && (
+        <div class="reveal mt-12 grid items-end gap-8 md:grid-cols-2 md:gap-10">
+          {
+            consoleSrc && (
+              <figure class="flex flex-col items-center md:items-end">
+                <img
+                  src={consoleSrc}
+                  alt={technology.imageAlt}
+                  class="w-full max-w-md object-contain drop-shadow-lg sm:max-w-lg lg:max-w-xl"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+              </figure>
+            )
+          }
+          {
+            catheterSrc && (
+              <figure class="flex flex-col items-center md:items-start">
+                <img
+                  src={catheterSrc}
+                  alt={technology.secondaryImageAlt}
+                  class="w-full max-w-md rounded-2xl object-contain shadow-card sm:max-w-lg"
+                  loading="lazy"
+                  width="800"
+                  height="500"
+                />
+              </figure>
+            )
+          }
+        </div>
+      )
+    }
 
     <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {

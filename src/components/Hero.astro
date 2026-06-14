@@ -2,36 +2,55 @@
 import siteData from '../data/site.json';
 
 const { hero } = siteData;
+const base = import.meta.env.BASE_URL;
+const imageSrc = hero.image ? `${base}${hero.image.replace(/^\//, '')}` : null;
 ---
 
 <section id="hero" class="gradient-hero relative overflow-hidden">
   <div class="hero-mesh absolute inset-0 opacity-60" aria-hidden="true"></div>
   <div class="section-padding relative">
     <div class="container-wide">
-      <div class="mx-auto max-w-4xl text-center">
-        <p class="reveal mb-4 inline-flex items-center rounded-full border border-primary/20 bg-white/60 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-primary">
-          {hero.eyebrow}
-        </p>
-        <h1 class="reveal reveal-delay-1 font-display text-4xl font-bold tracking-tight text-deep text-balance sm:text-5xl lg:text-6xl">
-          {hero.title}
-        </h1>
-        <p class="reveal reveal-delay-2 mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          {hero.subtitle}
-        </p>
-        <div class="reveal reveal-delay-3 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href={hero.primaryCta.href}
-            class="inline-flex w-full items-center justify-center rounded-full bg-highlight px-8 py-3.5 text-base font-semibold text-white shadow-md transition hover:bg-highlight/90 hover:shadow-lg sm:w-auto"
-          >
-            {hero.primaryCta.label}
-          </a>
-          <a
-            href={hero.secondaryCta.href}
-            class="inline-flex w-full items-center justify-center rounded-full border-2 border-deep/20 bg-white/70 px-8 py-3.5 text-base font-semibold text-deep transition hover:border-primary hover:bg-white sm:w-auto"
-          >
-            {hero.secondaryCta.label}
-          </a>
+      <div class="reveal grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <div class="text-center lg:text-left">
+          <p class="mb-4 inline-flex items-center rounded-full border border-primary/20 bg-white/60 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-primary">
+            {hero.eyebrow}
+          </p>
+          <h1 class="reveal reveal-delay-1 font-display text-4xl font-bold tracking-tight text-deep text-balance sm:text-5xl lg:text-5xl xl:text-6xl">
+            {hero.title}
+          </h1>
+          <p class="reveal reveal-delay-2 mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl lg:mx-0">
+            {hero.subtitle}
+          </p>
+          <div class="reveal reveal-delay-3 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+            <a
+              href={hero.primaryCta.href}
+              class="inline-flex w-full items-center justify-center rounded-full bg-highlight px-8 py-3.5 text-base font-semibold text-white shadow-md transition hover:bg-highlight/90 hover:shadow-lg sm:w-auto"
+            >
+              {hero.primaryCta.label}
+            </a>
+            <a
+              href={hero.secondaryCta.href}
+              class="inline-flex w-full items-center justify-center rounded-full border-2 border-deep/20 bg-white/70 px-8 py-3.5 text-base font-semibold text-deep transition hover:border-primary hover:bg-white sm:w-auto"
+            >
+              {hero.secondaryCta.label}
+            </a>
+          </div>
         </div>
+
+        {
+          imageSrc && (
+            <figure class="reveal reveal-delay-1 flex items-center justify-center lg:justify-end">
+              <img
+                src={imageSrc}
+                alt={hero.imageAlt}
+                class="w-full max-w-sm rounded-2xl object-contain shadow-card sm:max-w-md lg:max-w-lg"
+                loading="eager"
+                width="640"
+                height="640"
+              />
+            </figure>
+          )
+        }
       </div>
 
       <div class="reveal mx-auto mt-16 grid max-w-4xl gap-4 sm:grid-cols-3">

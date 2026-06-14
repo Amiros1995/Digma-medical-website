@@ -4,7 +4,9 @@
     "title": "A New Path to GI Health",
     "subtitle": "Contactless, uniform, depth-controlled laser ablation for Barrett's Esophagus — guided by imaging, designed for the standard endoscopy suite.",
     "primaryCta": { "label": "Explore EGAD", "href": "#technology" },
-    "secondaryCta": { "label": "Contact Us", "href": "#contact" }
+    "secondaryCta": { "label": "Contact Us", "href": "#contact" },
+    "image": "/images/photos/target-locations.jpeg",
+    "imageAlt": "Anatomical illustration showing EGAD target locations in the gastrointestinal tract"
   },
   "about": {
     "title": "Transforming Gastroenterology Care",
@@ -45,6 +47,8 @@
     "image": "/images/photos/diagone-console.png",
     "imageAlt": "EGAD treatment console with through-the-scope laser delivery system",
     "imageCaption": "The EGAD console and single-use catheter — designed for the standard GI endoscopy suite.",
+    "secondaryImage": "/images/photos/Catheter.JPG",
+    "secondaryImageAlt": "EGAD single-use catheter in sterile packaging",
     "features": [
       {
         "title": "Through-the-scope",
