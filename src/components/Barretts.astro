@@ -2,6 +2,8 @@
 import siteData from '../data/site.json';
 
 const { barretts } = siteData;
+const base = import.meta.env.BASE_URL;
+const imageSrc = barretts.image ? `${base}${barretts.image.replace(/^\//, '')}` : null;
 ---
 
 <section id="barretts" class="section-padding bg-surface">
@@ -10,6 +12,26 @@ const { barretts } = siteData;
       <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{barretts.title}</h2>
       <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-primary"></div>
     </div>
+
+    {
+      imageSrc && (
+        <figure class="reveal mx-auto mt-10 max-w-2xl overflow-hidden rounded-2xl border border-surface-dark bg-white shadow-card">
+          <img
+            src={imageSrc}
+            alt={barretts.imageAlt}
+            class="mx-auto max-h-80 w-full object-contain p-4"
+            loading="lazy"
+            width="640"
+            height="480"
+          />
+          {barretts.imageCaption && (
+            <figcaption class="border-t border-surface-dark bg-surface/50 px-5 py-3 text-center text-sm text-muted">
+              {barretts.imageCaption}
+            </figcaption>
+          )}
+        </figure>
+      )
+    }
 
     <div class="mt-14 grid gap-8 lg:grid-cols-2">
       <article class="reveal rounded-2xl border border-surface-dark bg-white p-8 shadow-card">

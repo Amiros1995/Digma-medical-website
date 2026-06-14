@@ -23,10 +23,15 @@ const base = import.meta.env.BASE_URL;
                   <img
                     src={`${base}${member.image.replace(/^\//, '')}`}
                     alt={`Portrait of ${member.name}`}
-                    class="h-28 w-28 rounded-2xl object-cover object-top shadow-sm ring-2 ring-surface-dark/50 sm:h-32 sm:w-32"
+                    class:list={[
+                      'rounded-2xl shadow-sm ring-2 ring-surface-dark/50',
+                      member.imageFit === 'contain'
+                        ? 'h-36 w-32 bg-surface object-contain object-center sm:h-40 sm:w-36'
+                        : 'h-28 w-28 object-cover object-top sm:h-32 sm:w-32',
+                    ]}
                     loading="lazy"
-                    width="128"
-                    height="128"
+                    width="144"
+                    height="160"
                   />
                 ) : (
                   <div

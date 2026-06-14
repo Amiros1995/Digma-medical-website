@@ -2,6 +2,8 @@
 import siteData from '../data/site.json';
 
 const { technology } = siteData;
+const base = import.meta.env.BASE_URL;
+const imageSrc = technology.image ? `${base}${technology.image.replace(/^\//, '')}` : null;
 
 const icons = [
   'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z',
@@ -20,6 +22,26 @@ const icons = [
       <p class="mt-4 text-lg text-muted">{technology.subtitle}</p>
       <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-highlight"></div>
     </div>
+
+    {
+      imageSrc && (
+        <figure class="reveal mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-surface-dark bg-[#0a0a0a] shadow-card">
+          <img
+            src={imageSrc}
+            alt={technology.imageAlt}
+            class="mx-auto w-full max-h-[420px] object-contain p-6 sm:p-8"
+            loading="lazy"
+            width="960"
+            height="540"
+          />
+          {technology.imageCaption && (
+            <figcaption class="border-t border-white/10 bg-deep px-5 py-3 text-center text-sm text-white/80">
+              {technology.imageCaption}
+            </figcaption>
+          )}
+        </figure>
+      )
+    }
 
     <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {

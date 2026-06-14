@@ -27,6 +27,7 @@
       "role": "Scientific Advisory Board Member",
       "initials": "OE",
       "image": "/images/photos/ohad-etzion.png",
+      "imageFit": "contain",
       "bio": "Prof. Ohad Etzion is Director of the Department of Gastroenterology and Liver Diseases at Soroka University Medical Center. He has vast experience leading multicenter, multinational clinical studies and serves as a consultant to multiple companies in the biopharmaceutical and medical device industries."
     }
   ]

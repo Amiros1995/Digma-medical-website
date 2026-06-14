@@ -34,11 +34,17 @@
       "\"One and Done\" — single tool, multi-zone treatment",
       "Effective ablation without full tissue contact",
       "Shorter procedure; potential to avoid general anesthesia"
-    ]
+    ],
+    "image": "/images/photos/barretts-esophagus.jpg",
+    "imageAlt": "Endoscopic view of Barrett's esophagus showing abnormal salmon-colored mucosa",
+    "imageCaption": "Barrett's esophagus — pre-cancerous change in the esophageal lining, often linked to chronic GERD."
   },
   "technology": {
     "title": "EGAD Technology",
     "subtitle": "Minimally invasive LASER-based balloon-catheter delivery",
+    "image": "/images/photos/diagone-console.png",
+    "imageAlt": "EGAD treatment console with through-the-scope laser delivery system",
+    "imageCaption": "The EGAD console and single-use catheter — designed for the standard GI endoscopy suite.",
     "features": [
       {
         "title": "Through-the-scope",
