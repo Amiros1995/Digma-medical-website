@@ -20,39 +20,29 @@ const icons = [
 
 <section id="technology" class="section-padding bg-white">
   <div class="container-wide">
-    <div class="reveal grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
-      <div class="text-center lg:text-left">
+    <div
+      class="reveal grid grid-cols-1 gap-4 lg:grid-cols-[1fr_1.1fr] lg:grid-rows-[auto_auto] lg:items-start lg:gap-x-10 lg:gap-y-3"
+    >
+      <!-- Top left: text -->
+      <div class="text-center lg:col-start-1 lg:row-start-1 lg:text-left">
         <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{technology.title}</h2>
-        <p class="mt-3 text-lg leading-relaxed text-muted">{technology.subtitle}</p>
-        <div class="mx-auto mt-3 h-1 w-16 rounded-full bg-highlight lg:mx-0"></div>
+        <p class="mt-2 text-lg leading-relaxed text-muted">{technology.subtitle}</p>
+        <div class="mx-auto mt-2 h-1 w-16 rounded-full bg-highlight lg:mx-0"></div>
         {
           technology.imageCaption && (
-            <p class="mt-4 text-base leading-relaxed text-muted">{technology.imageCaption}</p>
-          )
-        }
-        {
-          catheterSrc && (
-            <figure class="mt-5">
-              <img
-                src={catheterSrc}
-                alt={technology.secondaryImageAlt}
-                class="mx-auto w-full max-w-md rounded-2xl object-contain shadow-card lg:mx-0"
-                loading="lazy"
-                width="640"
-                height="400"
-              />
-            </figure>
+            <p class="mt-3 text-base leading-relaxed text-muted">{technology.imageCaption}</p>
           )
         }
       </div>
 
+      <!-- Right: console (red region) -->
       {
         consoleSrc && (
-          <figure class="flex items-start justify-center lg:justify-end lg:pt-2">
+          <figure class="flex justify-center lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:justify-end lg:self-start">
             <img
               src={consoleSrc}
               alt={technology.imageAlt}
-              class="w-full max-w-md object-contain drop-shadow-lg sm:max-w-lg lg:max-w-xl xl:max-w-2xl"
+              class="w-full max-w-sm object-contain drop-shadow-lg sm:max-w-md lg:max-w-lg xl:max-w-xl"
               loading="lazy"
               width="800"
               height="600"
@@ -60,9 +50,25 @@ const icons = [
           </figure>
         )
       }
+
+      <!-- Bottom left: catheter (blue region) -->
+      {
+        catheterSrc && (
+          <figure class="lg:col-start-1 lg:row-start-2">
+            <img
+              src={catheterSrc}
+              alt={technology.secondaryImageAlt}
+              class="mx-auto w-full max-w-sm rounded-2xl object-contain shadow-card lg:mx-0 lg:max-w-md"
+              loading="lazy"
+              width="640"
+              height="360"
+            />
+          </figure>
+        )
+      }
     </div>
 
-    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         technology.features.map((feature, i) => (
           <article class="reveal group rounded-2xl border border-surface-dark bg-surface/50 p-6 transition hover:-translate-y-1 hover:border-primary/30 hover:bg-white hover:shadow-card-hover">
