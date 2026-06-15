@@ -49,6 +49,8 @@
     "imageCaption": "The EGAD console and single-use catheter — designed for the standard GI endoscopy suite.",
     "secondaryImage": "/images/photos/Catheter.JPG",
     "secondaryImageAlt": "EGAD single-use catheter in sterile packaging",
+    "ablationVideo": "/videos/ablation-process.mp4",
+    "ablationVideoAlt": "EGAD laser ablation process demonstration",
     "features": [
       {
         "title": "Through-the-scope",
