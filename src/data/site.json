@@ -100,6 +100,10 @@
     "subtitle": "Reach out for clinical program inquiries, partnerships, or general information.",
     "submitLabel": "Send Message",
     "successMessage": "Thank you for your message. We will be in touch shortly.",
+    "locationTitle": "Our office",
+    "addressLines": ["Ha'arava St 1", "Giv'at Shmuel, Israel"],
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d845.1138440358591!2d34.85560575275177!3d32.083976223578986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4a03bfeb10d5%3A0x7078ba4fedc6e29d!2sHa%27arava%20St%201%2C%20Giv%27at%20Shmu%27el!5e0!3m2!1sen!2sil!4v1781510797497!5m2!1sen!2sil",
+    "mapLink": "https://www.google.com/maps/place/Ha'arava+St+1,+Giv'at+Shmu'el,+Israel",
     "fields": {
       "name": "Full name",
       "email": "Email address",
