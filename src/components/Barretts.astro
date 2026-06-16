@@ -25,7 +25,7 @@ const imageSrc = barretts.image ? `${base}${barretts.image.replace(/^\//, '')}` 
             height="480"
           />
           {barretts.imageCaption && (
-            <figcaption class="border-t border-surface-dark bg-surface/50 px-5 py-3 text-center text-sm text-muted">
+            <figcaption class="text-justify-body border-t border-surface-dark bg-surface/50 px-5 py-3 text-sm text-muted">
               {barretts.imageCaption}
             </figcaption>
           )}
@@ -39,7 +39,7 @@ const imageSrc = barretts.image ? `${base}${barretts.image.replace(/^\//, '')}` 
         <ul class="mt-6 space-y-3">
           {
             barretts.conditionPoints.map((point) => (
-              <li class="flex gap-3 text-sm leading-relaxed text-muted">
+              <li class="text-justify-body flex gap-3 text-sm leading-relaxed text-muted">
                 <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-highlight" aria-hidden="true"></span>
                 {point}
               </li>
@@ -53,7 +53,7 @@ const imageSrc = barretts.image ? `${base}${barretts.image.replace(/^\//, '')}` 
         <ul class="mt-6 space-y-3">
           {
             barretts.solutionPoints.map((point) => (
-              <li class="flex gap-3 text-sm leading-relaxed text-white/85">
+              <li class="text-justify-body flex gap-3 text-sm leading-relaxed text-white/85">
                 <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/15 text-xs" aria-hidden="true">✓</span>
                 {point}
               </li>

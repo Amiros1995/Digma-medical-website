@@ -41,6 +41,11 @@
     text-wrap: balance;
   }
 
+  .text-justify-body {
+    text-align: justify;
+    hyphens: auto;
+  }
+
   .section-padding {
     @apply px-5 py-20 md:px-8 lg:px-12 lg:py-28;
   }

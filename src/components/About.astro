@@ -12,12 +12,12 @@ const { about } = siteData;
     </div>
 
     <div class="reveal mt-12 grid gap-8 lg:grid-cols-2 lg:gap-12">
-      <div class="space-y-5 text-base leading-relaxed text-muted">
+      <div class="text-justify-body space-y-5 text-base leading-relaxed text-muted">
         {about.paragraphs.slice(0, 2).map((p) => <p>{p}</p>)}
       </div>
-      <div class="space-y-5 text-base leading-relaxed text-muted">
+      <div class="text-justify-body space-y-5 text-base leading-relaxed text-muted">
         {about.paragraphs.slice(2).map((p) => <p>{p}</p>)}
-        <p class="rounded-xl border border-primary/15 bg-surface p-5 text-sm font-medium text-deep">
+        <p class="rounded-xl border border-primary/15 bg-surface p-5 text-sm font-medium text-deep text-justify-body">
           {about.clinicalCta}
           <a href="#contact" class="ml-1 text-primary underline-offset-2 hover:underline">Contact us →</a>
         </p>
