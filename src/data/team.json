@@ -17,10 +17,17 @@
     },
     {
       "name": "Dr. Irit Yaniv, MD",
-      "role": "Chairwoman of the Board, Co-Founder",
+      "role": "Co-Founder",
       "initials": "IY",
       "image": "/images/photos/irit-yaniv.png",
       "bio": "Dr. Irit Yaniv is the Founding Partner and CEO of Almeda Ventures and Managing Partner at Accelmed Ventures II, with over 25 years of experience in venture capital, pharmaceutical, and biotech industries. As a senior manager, skilled physician, and experienced board member, she combines leadership, decision-making, and business expertise. She holds an MD from Ben-Gurion University and an MBA from Tel Aviv University."
+    },
+    {
+      "name": "Chris Rowland",
+      "role": "Board Chairman & Advisor",
+      "initials": "CR",
+      "image": "/images/photos/chris-rowland.png",
+      "bio": "Chris Rowland is a veteran MedTech executive with 35+ years leading medical device companies from startup to exit. A President & CEO for more than 15 years, he has led organizations acquired by Covidien/Medtronic, Teleflex, and a Chinese strategic. He currently serves as Board Chairman of Endostart, EvoEndo, and Keyron Medical Technologies, and advises several early- and growth-stage ventures across endoscopy, urology, and minimally invasive surgery."
     },
     {
       "name": "Prof. Ohad Etzion, MD",
