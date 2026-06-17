@@ -7,7 +7,7 @@ const base = process.env.BASE_PATH || '/';
 
 // @see https://astro.build/config
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://www.digmamedical.com',
+  site: process.env.SITE_URL || 'https://digmamedical.com',
   base,
   vite: {
     plugins: [tailwindcss()],

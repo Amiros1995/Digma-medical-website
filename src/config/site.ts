@@ -2,7 +2,7 @@
 export const siteConfig = {
   name: 'Digma Medical',
   tagline: 'LASER Ablation for Gastrointestinal Diseases',
-  url: 'https://www.digmamedical.com',
+  url: 'https://digmamedical.com',
   email: 'info@digmamedical.com',
   phone: '03-6734561',
   phoneTel: '+97236734561',
