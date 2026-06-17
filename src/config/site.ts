@@ -11,11 +11,15 @@ export const siteConfig = {
   /** Path to logo in public/ (used in header) */
   logo: '/images/logo.png',
 
-  /** Paste your GA4 measurement ID (e.g. G-XXXXXXXXXX) to enable analytics. Leave empty to disable. */
-  ga4MeasurementId: '',
+  /** GA4 measurement ID (e.g. G-XXXXXXXXXX). Set here or via PUBLIC_GA4_MEASUREMENT_ID at build time. */
+  ga4MeasurementId:
+    (import.meta.env.PUBLIC_GA4_MEASUREMENT_ID as string | undefined)?.trim() || '',
 
-  /** Paste your Formspree form ID (from formspree.io) to enable the contact form. Leave empty to show mailto fallback. */
-  formspreeId: '',
+  /**
+   * Optional Formspree form ID — overrides FormSubmit if set.
+   * Leave empty to deliver submissions to `email` via FormSubmit.co (free; one-time inbox activation).
+   */
+  formspreeId: (import.meta.env.PUBLIC_FORMSPREE_ID as string | undefined)?.trim() || '',
 
   /** Set to true once you add public/videos/investors.mp4 */
   investorsVideoAvailable: true,

@@ -37,6 +37,8 @@ jobs:
         env:
           BASE_PATH: /
           SITE_URL: https://digmamedical.com
+          PUBLIC_GA4_MEASUREMENT_ID: ${{ secrets.GA4_MEASUREMENT_ID }}
+          PUBLIC_FORMSPREE_ID: ${{ secrets.FORMSPREE_ID }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

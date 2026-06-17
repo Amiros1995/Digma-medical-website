@@ -1,6 +1,6 @@
 # Digma Medical Website
 
-Modern marketing site for [Digma Medical](https://www.digmamedical.com/) — built with [Astro](https://astro.build) and deployed to **GitHub Pages**. This project runs in parallel with the existing Wix site until you are ready to switch DNS.
+Modern marketing site for [Digma Medical](https://digmamedical.com/) — built with [Astro](https://astro.build) and deployed to **GitHub Pages**.
 
 ## Quick start (preview on your computer)
 
@@ -128,35 +128,36 @@ The workflow sets `BASE_PATH` to `/your-repo-name/` automatically. No manual cha
 
 ---
 
-## Site statistics (replacing Wix analytics)
+## Contact form
 
-Wix analytics do not transfer. To track visitors:
+Submissions are sent to **info@digmamedical.com** via [FormSubmit.co](https://formsubmit.co) (no Formspree account required).
 
-1. Create a [Google Analytics 4](https://analytics.google.com/) property.
-2. Copy the Measurement ID (starts with `G-`).
-3. Paste it in [`src/config/site.ts`](src/config/site.ts):
+**One-time activation:** After deploy, submit a test message on the live site. FormSubmit emails **info@digmamedical.com** with an activation link — click it once. After that, all form submissions arrive in that inbox.
 
-   ```ts
-   ga4MeasurementId: 'G-XXXXXXXXXX',
-   ```
-
-4. Push to GitHub. View reports in the GA4 dashboard.
-
-Optional: add [Microsoft Clarity](https://clarity.microsoft.com/) for heatmaps.
+To use **Formspree** instead, set `formspreeId` in `src/config/site.ts` or add a `FORMSPREE_ID` GitHub Actions secret.
 
 ---
 
-## Contact form (Formspree)
+## Site statistics (Google Analytics 4)
 
-1. Sign up at [formspree.io](https://formspree.io) (free tier available).
-2. Create a form and copy the form ID from the endpoint URL.
-3. In [`src/config/site.ts`](src/config/site.ts):
+1. Sign in at [analytics.google.com](https://analytics.google.com) with a company Google account.
+2. **Admin** → **Create property** → name it “Digma Medical Website”.
+3. Add a **Web** data stream for `https://digmamedical.com`.
+4. Copy the **Measurement ID** (starts with `G-`).
 
-   ```ts
-   formspreeId: 'your_form_id',
-   ```
+**Option A — GitHub secret (recommended for production):**
 
-Until configured, the contact section shows a **mailto** link to `info@digmamedical.com`.
+1. Repo → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**
+2. Name: `GA4_MEASUREMENT_ID`, value: your `G-…` ID
+3. Push any commit (or re-run the deploy workflow)
+
+**Option B — paste in code:**
+
+In `src/config/site.ts`, set `ga4MeasurementId` directly (or use `.env` locally — see `.env.example`).
+
+Analytics does not run on `localhost` during development.
+
+Optional: add [Microsoft Clarity](https://clarity.microsoft.com/) for heatmaps.
 
 ---
 

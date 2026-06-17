@@ -22,10 +22,16 @@ Add `"image": "/images/filename.jpg"` to each member in `src/data/team.json`:
 - [ ] Dr. Irit Yaniv
 - [ ] Prof. Ohad Etzion
 
+Until configured, the contact section shows a **mailto** link to `info@digmamedical.com`.
+
+**Note:** The contact form now uses FormSubmit by default (see README). Formspree is optional.
+
+---
+
 ## Before go-live
 
-- [ ] Formspree ID in `src/config/site.ts`
-- [ ] GA4 measurement ID in `src/config/site.ts`
+- [x] Contact form (FormSubmit → info@digmamedical.com; activate after first test submit)
+- [ ] GA4 measurement ID (GitHub secret `GA4_MEASUREMENT_ID` or `site.ts`)
 - [ ] Regulatory review of all clinical/market claims
 - [ ] Test contact form and video on mobile
 
