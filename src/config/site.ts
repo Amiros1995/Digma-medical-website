@@ -13,7 +13,7 @@ export const siteConfig = {
 
   /** GA4 measurement ID (e.g. G-XXXXXXXXXX). Set here or via PUBLIC_GA4_MEASUREMENT_ID at build time. */
   ga4MeasurementId:
-    (import.meta.env.PUBLIC_GA4_MEASUREMENT_ID as string | undefined)?.trim() || '',
+    (import.meta.env.PUBLIC_GA4_MEASUREMENT_ID as string | undefined)?.trim() || 'G-HFQ3827LZ5',
 
   /**
    * Optional Formspree form ID — overrides FormSubmit if set.
