@@ -95,6 +95,22 @@
     "videoTitle": "Company Overview",
     "placeholderMessage": "Add your investors presentation video as public/videos/investors.mp4, then set investorsVideoAvailable to true in src/config/site.ts."
   },
+  "quality": {
+    "title": "Quality & Certification",
+    "subtitle": "Independently audited medical device quality management",
+    "intro": "Digma Medical Ltd. operates a quality management system certified to ISO 13485:2016 by the Standards Institution of Israel (SII), Quality & Certification Division.",
+    "scopeLabel": "Certification scope",
+    "scope": "Design, development, and manufacture of endoscopic gastrointestinal ablation devices for therapeutic applications in the digestive tract.",
+    "details": [
+      { "label": "Standard", "value": "ISO 13485:2016" },
+      { "label": "Certification body", "value": "Standards Institution of Israel (SII)" },
+      { "label": "Certificate No.", "value": "114182" },
+      { "label": "Valid until", "value": "18 August 2027" }
+    ],
+    "disclaimer": "This certification applies to our quality management system and reflects independently audited processes. It does not indicate regulatory approval or commercial availability of any specific product.",
+    "certificateLabel": "View certificate (PDF)",
+    "certificatePath": "/documents/iso-13485-certificate-114182.pdf"
+  },
   "contact": {
     "title": "Contact",
     "subtitle": "Reach out for clinical program inquiries, partnerships, or general information.",

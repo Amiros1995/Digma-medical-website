@@ -36,5 +36,6 @@ export const navLinks = [
   { href: '#market', label: 'Market' },
   { href: '#team', label: 'Team' },
   { href: '#investors', label: 'Investors' },
+  { href: '#quality', label: 'Quality' },
   { href: '#contact', label: 'Contact' },
 ] as const;
