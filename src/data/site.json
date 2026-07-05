@@ -97,18 +97,18 @@
       {
         "name": "Arkin Capital",
         "url": "https://arkin-capital.com/",
-        "logo": "/images/investors/arkin-capital.svg"
+        "logo": "/images/investors/arkin-capital.png"
       },
       {
         "name": "Consensus Business Group",
         "url": "https://www.cbg.uk.com/",
-        "logo": "/images/investors/consensus-business-group.png"
+        "logo": "/images/investors/consensus-business-group.png",
+        "logoClass": "wide"
       },
       {
         "name": "TAL Ventures",
         "url": "https://tal-ventures.com/",
-        "logo": "/images/investors/tal-ventures.png",
-        "logoClass": "dark-logo"
+        "logo": "/images/investors/tal-ventures.png"
       }
     ],
     "videoTitle": "Company Overview",
