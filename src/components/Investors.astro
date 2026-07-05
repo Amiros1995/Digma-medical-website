@@ -16,6 +16,42 @@ const posterSrc = `${base}images/investors-poster.jpg`;
       <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-highlight"></div>
     </div>
 
+    {
+      investors.backers?.length > 0 && (
+        <div class="reveal mt-12">
+          <p class="text-center text-sm font-semibold uppercase tracking-wider text-muted">{investors.backersTitle}</p>
+          <ul class="mt-8 grid gap-6 sm:grid-cols-3">
+            {
+              investors.backers.map((backer) => {
+                const logoSrc = `${base}${backer.logo.replace(/^\//, '')}`;
+                const isDarkLogo = backer.logoClass === 'dark-logo';
+                return (
+                  <li>
+                    <a
+                      href={backer.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class={`group flex h-28 items-center justify-center rounded-2xl border border-surface-dark px-6 py-5 shadow-card transition hover:border-primary/30 hover:shadow-card-hover ${isDarkLogo ? 'bg-deep' : 'bg-surface/40'}`}
+                      aria-label={`${backer.name} (opens in new tab)`}
+                    >
+                      <img
+                        src={logoSrc}
+                        alt={backer.name}
+                        class={`max-h-12 w-full max-w-[200px] object-contain transition ${isDarkLogo ? '' : 'opacity-80 grayscale group-hover:opacity-100 group-hover:grayscale-0'}`}
+                        loading="lazy"
+                        width="200"
+                        height="64"
+                      />
+                    </a>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+      )
+    }
+
     <div class="reveal mt-12 overflow-hidden rounded-2xl border border-surface-dark bg-deep shadow-card">
       {
         siteConfig.investorsVideoAvailable ? (

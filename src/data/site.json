@@ -92,6 +92,25 @@
   "investors": {
     "title": "Investors",
     "subtitle": "Digma Medical is a privately held company backed by leading venture capital firms.",
+    "backersTitle": "Backed by",
+    "backers": [
+      {
+        "name": "Arkin Capital",
+        "url": "https://arkin-capital.com/",
+        "logo": "/images/investors/arkin-capital.svg"
+      },
+      {
+        "name": "Consensus Business Group",
+        "url": "https://www.cbg.uk.com/",
+        "logo": "/images/investors/consensus-business-group.gif"
+      },
+      {
+        "name": "TAL Ventures",
+        "url": "https://tal-ventures.com/",
+        "logo": "/images/investors/tal-ventures.png",
+        "logoClass": "dark-logo"
+      }
+    ],
     "videoTitle": "Company Overview",
     "placeholderMessage": "Add your investors presentation video as public/videos/investors.mp4, then set investorsVideoAvailable to true in src/config/site.ts."
   },
