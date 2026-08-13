@@ -14,10 +14,10 @@ if (!form) {
   function setStatus(message: string, type: 'success' | 'error' | 'info') {
     if (!statusEl) return;
     statusEl.textContent = message;
-    statusEl.classList.remove('hidden', 'text-green-700', 'text-red-700', 'text-muted');
-    if (type === 'success') statusEl.classList.add('text-green-700');
-    else if (type === 'error') statusEl.classList.add('text-red-700');
-    else statusEl.classList.add('text-muted');
+    statusEl.classList.remove('hidden', 'text-green-400', 'text-red-400', 'text-soft');
+    if (type === 'success') statusEl.classList.add('text-green-400');
+    else if (type === 'error') statusEl.classList.add('text-red-400');
+    else statusEl.classList.add('text-soft');
   }
 
   form.addEventListener('submit', async (event) => {

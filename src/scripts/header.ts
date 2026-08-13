@@ -23,6 +23,6 @@ document.querySelectorAll('.mobile-nav-link').forEach((link) => {
 
 window.addEventListener('scroll', () => {
   if (!header) return;
-  header.classList.toggle('border-surface-dark', window.scrollY > 8);
+  header.classList.toggle('border-line', window.scrollY > 8);
   header.classList.toggle('shadow-sm', window.scrollY > 8);
 });

@@ -6,61 +6,41 @@ const base = import.meta.env.BASE_URL;
 const imageSrc = barretts.image ? `${base}${barretts.image.replace(/^\//, '')}` : null;
 ---
 
-<section id="barretts" class="section-padding bg-surface">
-  <div class="container-narrow">
-    <div class="reveal text-center">
-      <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{barretts.title}</h2>
-      <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-primary"></div>
-    </div>
-
-    {
-      imageSrc && (
-        <figure class="reveal mx-auto mt-10 max-w-2xl overflow-hidden rounded-2xl border border-surface-dark bg-white shadow-card">
-          <img
-            src={imageSrc}
-            alt={barretts.imageAlt}
-            class="mx-auto max-h-80 w-full object-contain p-4"
-            loading="lazy"
-            width="640"
-            height="480"
-          />
-          {barretts.imageCaption && (
-            <figcaption class="text-justify-body border-t border-surface-dark bg-surface/50 px-5 py-3 text-sm text-muted">
-              {barretts.imageCaption}
-            </figcaption>
-          )}
-        </figure>
-      )
-    }
-
-    <div class="mt-14 grid gap-8 lg:grid-cols-2">
-      <article class="reveal rounded-2xl border border-surface-dark bg-white p-8 shadow-card">
-        <h3 class="font-display text-xl font-semibold text-deep">{barretts.conditionTitle}</h3>
-        <ul class="mt-6 space-y-3">
+<section id="barretts" class="section-padding border-b border-line bg-surface">
+  <div class="container-wide">
+    <div class="reveal text-[11px] tracking-[0.22em] text-primary uppercase">{barretts.eyebrow}</div>
+    <div class="mt-5 grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      {
+        imageSrc && (
+          <figure class="reveal">
+            <img
+              src={imageSrc}
+              alt={barretts.imageAlt}
+              class="w-full border border-line object-contain bg-panel p-3"
+              loading="lazy"
+              width="640"
+              height="480"
+            />
+            <figcaption class="mt-3 text-[12.5px] leading-relaxed text-faint">{barretts.imageCaption}</figcaption>
+          </figure>
+        )
+      }
+      <div class="reveal reveal-delay-1">
+        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-ink text-balance sm:text-4xl">
+          {barretts.title}
+        </h2>
+        <p class="mt-5 text-lg leading-relaxed text-body">{barretts.description}</p>
+        <div class="mt-7 grid gap-3">
           {
-            barretts.conditionPoints.map((point) => (
-              <li class="text-justify-body flex gap-3 text-sm leading-relaxed text-muted">
-                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-highlight" aria-hidden="true"></span>
-                {point}
-              </li>
+            barretts.points.map((point, i) => (
+              <div class="flex gap-4 border-t border-line pt-3">
+                <span class="text-[13px] text-primary">{String(i + 1).padStart(2, '0')}</span>
+                <span class="text-[15px] leading-relaxed text-emphasis">{point}</span>
+              </div>
             ))
           }
-        </ul>
-      </article>
-
-      <article class="reveal reveal-delay-1 rounded-2xl border border-primary/20 bg-deep p-8 text-white shadow-card">
-        <h3 class="font-display text-xl font-semibold">{barretts.solutionTitle}</h3>
-        <ul class="mt-6 space-y-3">
-          {
-            barretts.solutionPoints.map((point) => (
-              <li class="text-justify-body flex gap-3 text-sm leading-relaxed text-white/85">
-                <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/15 text-xs" aria-hidden="true">✓</span>
-                {point}
-              </li>
-            ))
-          }
-        </ul>
-      </article>
+        </div>
+      </div>
     </div>
   </div>
 </section>

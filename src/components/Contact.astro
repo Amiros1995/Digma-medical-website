@@ -10,142 +10,146 @@ const formEndpoint = useFormspree
   : `https://formsubmit.co/ajax/${encodeURIComponent(siteConfig.email)}`;
 ---
 
-<section id="contact" class="section-padding bg-surface">
-  <div class="container-wide">
-    <div class="reveal mx-auto max-w-3xl text-center">
-      <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{contact.title}</h2>
-      <p class="mt-4 text-lg text-muted">{contact.subtitle}</p>
-      <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-primary"></div>
-    </div>
+<section id="contact" class="gradient-hero relative overflow-hidden border-b border-line">
+  <div class="ring-decoration -bottom-64 -left-40 hidden h-[560px] w-[560px] opacity-50 sm:block" aria-hidden="true">
+    <span class="ring-decoration inset-0 border border-line"></span>
+    <span class="ring-decoration inset-[100px] border border-ring"></span>
+    <span class="ring-decoration inset-[200px] border border-[1.5px] border-primary"></span>
+  </div>
 
-    <div class="reveal mt-12 grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-12">
-      <div class="mx-auto w-full max-w-xl lg:mx-0">
-        <form
-          id="contact-form"
-          class="space-y-5 rounded-2xl border border-surface-dark bg-white p-8 shadow-card"
-          data-endpoint={formEndpoint}
-          data-success-message={contact.successMessage}
-          data-error-message={contact.errorMessage}
-          data-sending-label={contact.sendingLabel}
-          novalidate
-        >
-          <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+  <div class="section-padding relative">
+    <div class="container-wide grid gap-14 lg:grid-cols-2 lg:items-start">
+      <div class="reveal">
+        <div class="text-[11px] tracking-[0.22em] text-primary uppercase">{contact.title}</div>
+        <h2 class="mt-5 font-display text-3xl font-bold leading-tight tracking-tight text-ink text-balance sm:text-4xl">
+          Let's talk about the clinical program
+        </h2>
+        <p class="mt-5 text-lg leading-relaxed text-body">{contact.subtitle}</p>
 
+        <div class="mt-9 grid gap-3 border-t border-line pt-7">
+          <div>
+            <div class="text-[11px] tracking-[0.2em] text-faint uppercase">Email</div>
+            <a href={`mailto:${siteConfig.email}`} class="mt-1.5 block text-[15px] text-primary hover:text-primary-light">
+              {siteConfig.email}
+            </a>
+          </div>
+          <div>
+            <div class="text-[11px] tracking-[0.2em] text-faint uppercase">Phone</div>
+            <a href={`tel:${siteConfig.phoneTel}`} class="mt-1.5 block text-[15px] text-primary hover:text-primary-light">
+              {contact.phone}
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-9 grid gap-5 sm:grid-cols-2">
           {
-            !useFormspree && (
-              <>
-                <input type="hidden" name="_subject" value="New inquiry from digmamedical.com" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-              </>
-            )
+            contact.offices.map((office) => (
+              <div class="border border-line bg-panel p-5">
+                <div class="text-[11px] tracking-[0.2em] text-faint uppercase">{office.title}</div>
+                <address class="mt-2 not-italic text-[14px] leading-relaxed text-emphasis">
+                  {office.addressLines.map((line) => (
+                    <span class="block">{line}</span>
+                  ))}
+                </address>
+                <div class="mt-4 overflow-hidden border border-line">
+                  <iframe
+                    src={office.mapEmbedUrl}
+                    class="aspect-[4/3] w-full"
+                    style="border:0;filter:grayscale(0.15) invert(0.92) contrast(0.9);"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title={`${office.title} on Google Maps`}
+                  />
+                </div>
+                <a
+                  href={office.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-3 inline-flex items-center gap-1.5 text-[13px] text-primary hover:text-primary-light"
+                >
+                  Open in Google Maps
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            ))
           }
-
-          <div>
-            <label for="name" class="mb-1.5 block text-sm font-medium text-deep">{contact.fields.name}</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              autocomplete="name"
-              class="w-full rounded-xl border border-surface-dark bg-surface/30 px-4 py-3 text-deep transition focus:border-primary focus:bg-white focus:outline-none"
-            />
-          </div>
-          <div>
-            <label for="email" class="mb-1.5 block text-sm font-medium text-deep">{contact.fields.email}</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              autocomplete="email"
-              class="w-full rounded-xl border border-surface-dark bg-surface/30 px-4 py-3 text-deep transition focus:border-primary focus:bg-white focus:outline-none"
-            />
-          </div>
-          <div>
-            <label for="subject" class="mb-1.5 block text-sm font-medium text-deep">{contact.fields.subject}</label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              required
-              class="w-full rounded-xl border border-surface-dark bg-surface/30 px-4 py-3 text-deep transition focus:border-primary focus:bg-white focus:outline-none"
-            />
-          </div>
-          <div>
-            <label for="message" class="mb-1.5 block text-sm font-medium text-deep">{contact.fields.message}</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              required
-              class="w-full resize-y rounded-xl border border-surface-dark bg-surface/30 px-4 py-3 text-deep transition focus:border-primary focus:bg-white focus:outline-none"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            class="w-full rounded-full bg-deep py-3.5 text-base font-semibold text-white transition hover:bg-primary disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {contact.submitLabel}
-          </button>
-
-          <p
-            id="contact-form-status"
-            class="hidden min-h-[1.25rem] text-center text-sm"
-            role="status"
-            aria-live="polite"
-          ></p>
-        </form>
-      </div>
-
-      <div class="mx-auto w-full max-w-xl lg:mx-0">
-        <div class="rounded-2xl border border-surface-dark bg-white p-6 shadow-card sm:p-8">
-          <h3 class="font-display text-lg font-semibold text-deep">{contact.locationTitle}</h3>
-          <address class="mt-3 not-italic text-base leading-relaxed text-muted">
-            {
-              contact.addressLines.map((line) => (
-                <span class="block">{line}</span>
-              ))
-            }
-          </address>
-          <a
-            href={`mailto:${siteConfig.email}`}
-            class="mt-4 inline-block text-sm font-medium text-primary transition hover:text-deep"
-          >
-            {siteConfig.email}
-          </a>
-          <a
-            href={`tel:${siteConfig.phoneTel}`}
-            class="mt-2 block text-sm font-medium text-primary transition hover:text-deep"
-          >
-            {contact.phone}
-          </a>
-
-          <div class="mt-6 overflow-hidden rounded-xl border border-surface-dark">
-            <iframe
-              src={contact.mapEmbedUrl}
-              class="aspect-[4/3] w-full"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Digma Medical office location on Google Maps"
-            ></iframe>
-          </div>
-
-          <a
-            href={contact.mapLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition hover:text-deep"
-          >
-            Open in Google Maps
-            <span aria-hidden="true">↗</span>
-          </a>
         </div>
       </div>
+
+      <form
+        id="contact-form"
+        class="reveal reveal-delay-1 grid gap-5 border border-line-strong bg-panel p-8"
+        data-endpoint={formEndpoint}
+        data-success-message={contact.successMessage}
+        data-error-message={contact.errorMessage}
+        data-sending-label={contact.sendingLabel}
+        novalidate
+      >
+        <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        {
+          !useFormspree && (
+            <>
+              <input type="hidden" name="_subject" value="New inquiry from digmamedical.com" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+            </>
+          )
+        }
+
+        <label class="grid gap-2">
+          <span class="text-xs tracking-[0.14em] text-faint uppercase">{contact.fields.name}</span>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            autocomplete="name"
+            class="border border-line-strong bg-surface px-4 py-3 text-[15px] text-ink transition focus:border-primary focus:outline-none"
+          />
+        </label>
+        <label class="grid gap-2">
+          <span class="text-xs tracking-[0.14em] text-faint uppercase">{contact.fields.email}</span>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            class="border border-line-strong bg-surface px-4 py-3 text-[15px] text-ink transition focus:border-primary focus:outline-none"
+          />
+        </label>
+        <label class="grid gap-2">
+          <span class="text-xs tracking-[0.14em] text-faint uppercase">{contact.fields.subject}</span>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            required
+            class="border border-line-strong bg-surface px-4 py-3 text-[15px] text-ink transition focus:border-primary focus:outline-none"
+          />
+        </label>
+        <label class="grid gap-2">
+          <span class="text-xs tracking-[0.14em] text-faint uppercase">{contact.fields.message}</span>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            class="resize-y border border-line-strong bg-surface px-4 py-3 text-[15px] text-ink transition focus:border-primary focus:outline-none"
+          ></textarea>
+        </label>
+
+        <button
+          type="submit"
+          class="mt-1.5 rounded-sm bg-primary py-3.5 text-sm font-bold tracking-wide text-panel-strong transition hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          {contact.submitLabel}
+        </button>
+
+        <p id="contact-form-status" class="hidden min-h-[1.25rem] text-center text-sm" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </div>
 </section>

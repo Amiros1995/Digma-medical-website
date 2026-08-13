@@ -1,0 +1,34 @@
+---
+import siteData from '../data/site.json';
+
+const { problem } = siteData;
+---
+
+<section id="depth" class="section-padding border-b border-line bg-surface">
+  <div class="container-wide">
+    <div class="reveal text-[11px] tracking-[0.22em] text-primary uppercase">{problem.eyebrow}</div>
+    <div class="mt-5 grid gap-14 lg:grid-cols-2 lg:items-start">
+      <div class="reveal">
+        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-ink text-balance sm:text-4xl">
+          {problem.title}
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-body">{problem.description}</p>
+      </div>
+      <div class="grid gap-4">
+        {
+          problem.points.map((point, i) => (
+            <div class:list={['reveal flex gap-5 border border-line bg-panel p-6', i > 0 ? `reveal-delay-${Math.min(i, 3)}` : '']}>
+              <span class="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line-strong text-sm font-bold text-primary">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <div class="text-base font-bold text-ink">{point.title}</div>
+                <div class="mt-1.5 text-sm leading-relaxed text-soft">{point.description}</div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

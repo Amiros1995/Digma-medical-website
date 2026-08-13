@@ -1,93 +1,191 @@
 {
   "hero": {
-    "eyebrow": "Endoscopic GI Ablation Device (EGAD)",
-    "title": "A New Path to GI Health",
-    "subtitle": "Contactless, uniform, depth-controlled laser ablation for Barrett's Esophagus — guided by imaging, designed for the standard endoscopy suite.",
-    "primaryCta": { "label": "Explore EGAD", "href": "#technology" },
-    "secondaryCta": { "label": "Contact Us", "href": "#contact" },
-    "image": "/images/photos/target-locations.jpeg",
-    "imageAlt": "Anatomical illustration showing EGAD target locations in the gastrointestinal tract"
-  },
-  "about": {
-    "title": "Transforming Gastroenterology Care",
-    "paragraphs": [
-      "Digma Medical Ltd. is a medical technology company dedicated to transforming the treatment of gastroenterology pathologies, starting with Barrett's Esophagus (BE) — a pre-cancerous condition that may progress to esophageal adenocarcinoma, one of the most deadly forms of GI cancer.",
-      "We are developing a minimally invasive therapy, the Endoscopic Gastrointestinal Ablation Device (EGAD), that provides contactless, uniform, deep ablation guided by imaging. EGAD is designed to treat the full circumference of the esophagus or isolated patches in a single, safe, and efficient procedure — targeting mucosal tissue while protecting deeper layers such as the muscularis.",
-      "Our product consists of a console and a single-use catheter compatible with the working channel of standard gastrointestinal endoscopes. The EGAD procedure is being developed for performance in a standard GI endoscopy suite without requiring additional imaging equipment.",
-      "The EGAD procedure is currently being evaluated in clinical studies."
-    ],
-    "clinicalCta": "To learn more about our clinical program, please contact us."
-  },
-  "barretts": {
-    "title": "Barrett's Esophagus",
-    "conditionTitle": "The Condition",
-    "conditionPoints": [
-      "Caused by chronic GERD (gastroesophageal reflux disease)",
-      "Often progresses silently and is diagnosed too late",
-      "Symptoms include heartburn, regurgitation, and difficulty swallowing",
-      "Increases risk of esophageal adenocarcinoma (EAC) by up to 125×",
-      "Ablation eliminates abnormal tissue and enables regeneration",
-      "High recurrence with current therapies often requires multiple sessions",
-      "Rising demand for effective, safe, and minimally invasive solutions"
-    ],
-    "solutionTitle": "EGAD: Uniform & Tailored Ablation",
-    "solutionPoints": [
-      "Precision ablation with controlled depth and energy — Map & Mark before Ablate",
-      "\"One and Done\" — single tool, multi-zone treatment",
-      "Effective ablation without full tissue contact",
-      "Shorter procedure; potential to avoid general anesthesia"
-    ],
-    "image": "/images/photos/barretts-esophagus.jpg",
-    "imageAlt": "Endoscopic view of Barrett's esophagus showing abnormal salmon-colored mucosa",
-    "imageCaption": "Barrett's esophagus — pre-cancerous change in the esophageal lining, often linked to chronic GERD."
-  },
-  "technology": {
-    "title": "EGAD Technology",
-    "subtitle": "Minimally invasive LASER-based balloon-catheter delivery",
-    "image": "/images/photos/diagone-console.png",
-    "imageAlt": "EGAD treatment console with through-the-scope laser delivery system",
-    "imageCaption": "The EGAD console and single-use catheter — designed for the standard GI endoscopy suite.",
-    "secondaryImage": "/images/photos/Catheter.JPG",
-    "secondaryImageAlt": "EGAD single-use catheter in sterile packaging",
-    "ablationVideo": "/videos/ablation-process.mp4",
-    "ablationVideoAlt": "EGAD laser ablation process demonstration",
-    "features": [
+    "eyebrow": "Endoscopic LASER Ablation Platform",
+    "title": "Depth-controlled ablation for GI – Starting with Barrett's esophagus.",
+    "subtitle": "VeriDepth LX delivers contactless, pattern-based LASER energy to a defined target depth — designed to clear disease in fewer sessions while sparing the deeper layers.",
+    "primaryCta": { "label": "Explore the Platform", "href": "#platform" },
+    "secondaryCta": { "label": "Clinical Program Inquiries", "href": "#contact" },
+    "differenceLabel": "The VeriDepth Difference",
+    "differentiators": [
       {
-        "title": "Through-the-scope",
-        "description": "Single-use catheter delivered via the working channel of standard GI endoscopes."
+        "title": "Controlled depth",
+        "description": "Energy regulated toward a defined target depth."
       },
       {
-        "title": "Contactless ablation",
-        "description": "Uniform, depth-controlled treatment without requiring full tissue contact."
+        "title": "Deeper layers spared",
+        "description": "Muscle layer preserved at the chronic timepoint in preclinical study."
       },
       {
-        "title": "Balloon-centered laser",
-        "description": "Balloon system centralizes the laser with catheter anchoring for stable delivery."
-      },
-      {
-        "title": "Dual-wavelength guidance",
-        "description": "Visible red guide pointer for targeting; NIR therapeutic laser for ablation."
-      },
-      {
-        "title": "Standard GI suite",
-        "description": "Outpatient procedure using standard endoscopy technique — no fluoroscopy required."
-      },
-      {
-        "title": "Selective interaction",
-        "description": "Adjustable tissue interaction designed for various anatomies and treatment zones."
+        "title": "One and done workflow",
+        "description": "Circumferential balloon coverage with precise focal treatment as needed, in a single pass."
       }
     ]
   },
-  "market": {
-    "title": "Market Opportunity",
-    "subtitle": "Global Barrett's Esophagus ablation devices market",
-    "stats": [
-      { "value": "$1.5B", "label": "Market size by 2033", "detail": "CAGR 7.8%" },
-      { "value": "12M+", "label": "Affected in the US", "detail": "Large addressable population" },
-      { "value": "200K+", "label": "New US cases/year", "detail": "Growing incidence" },
-      { "value": "60%", "label": "EAC share of esophageal cancer", "detail": "6th most common cancer globally" }
+  "about": {
+    "eyebrow": "About Digma Medical",
+    "title": "Transforming Gastroenterology Care",
+    "paragraphs": [
+      "Digma Medical Ltd. is a medical technology company dedicated to transforming the treatment of gastroenterology pathologies, starting with Barrett's Esophagus (BE) — a pre-cancerous condition that may progress to esophageal adenocarcinoma, one of the most deadly forms of GI cancer.",
+      "We are developing VeriDepth, a minimally invasive therapy that provides contactless, depth-controlled ablation guided by imaging. VeriDepth is designed to treat the full circumference of the esophagus or isolated patches in a single, short procedure that is safe and efficient — targeting mucosal tissue while protecting deeper layers such as the muscularis.",
+      "Our product consists of the VeriDepth LX console and a single-use catheter compatible with the working channel of standard gastrointestinal endoscopes. The VeriDepth procedure is being developed for performance in a standard GI endoscopy suite without requiring additional imaging equipment.",
+      "The VeriDepth procedure is currently being evaluated in clinical studies."
     ],
-    "footnote": "Large unmet need and high recurrence rates with current therapies continue to drive demand for safer, more durable ablation solutions."
+    "clinicalCta": "To learn more about our clinical program, please contact us."
+  },
+  "stats": {
+    "items": [
+      {
+        "value": "~292K",
+        "label": "U.S. endoscopic ablation procedures per year for Barrett's",
+        "accent": "primary"
+      },
+      {
+        "value": "3+",
+        "label": "sessions typically needed to clear a single patient today"
+      },
+      {
+        "value": "Up to 35%",
+        "label": "recurrence drives repeat cycles and ongoing surveillance",
+        "accent": "accent"
+      },
+      {
+        "value": "125×",
+        "label": "increased risk of esophageal adenocarcinoma with Barrett's"
+      }
+    ]
+  },
+  "problem": {
+    "eyebrow": "The Problem",
+    "title": "The problem isn't ablation. It's repeat procedures.",
+    "description": "Today's standard of care works, but uncontrolled ablation depth leaves disease behind — driving recurrence, repeat sessions, and ongoing treatment burden for patients and endoscopy suites alike. The modality is two decades old, and depth has never been the variable it controlled.",
+    "points": [
+      {
+        "title": "Repeat sessions",
+        "description": "Multiple ablation sessions to clear one patient, each with its own sedation and suite time."
+      },
+      {
+        "title": "Recurrence",
+        "description": "Residual disease below the treated plane returns, restarting the treatment cycle."
+      },
+      {
+        "title": "Capacity drain",
+        "description": "More sedations, more endoscopy-suite time, more patient drop-off before eradication."
+      }
+    ]
+  },
+  "platform": {
+    "eyebrow": "The Platform",
+    "title": "VeriDepth LX: precise, depth-controlled LASER ablation",
+    "subtitle": "A LASER console with a family of single-use balloon catheters, delivered through the working channel of standard GI endoscopes — in a standard endoscopy suite, with no additional imaging equipment.",
+    "tagLabel": "One Platform",
+    "tagDetail": "Console + catheter family",
+    "image": "/images/photos/diagone-console.png",
+    "imageAlt": "VeriDepth LX treatment console",
+    "imageCaption": "The console — placed capital equipment",
+    "secondaryImage": "/images/photos/Catheter.JPG",
+    "secondaryImageAlt": "Single-use VeriDepth catheter in sterile packaging",
+    "secondaryImageCaption": "Single-use catheters — multiple balloon sizes",
+    "ablationVideo": "/videos/ablation-process.mp4",
+    "ablationVideoAlt": "VeriDepth LASER ablation process demonstration",
+    "features": [
+      {
+        "title": "Controlled penetration depth",
+        "description": "Energy delivered toward a defined target depth rather than an uncontrolled thermal front."
+      },
+      {
+        "title": "Deeper layers spared",
+        "description": "Designed to spare the layers whose injury drives stricture risk."
+      },
+      {
+        "title": "Pattern-based 3D maps",
+        "description": "Customized ablation patterns for circumferential segments or isolated focal patches."
+      },
+      {
+        "title": "Non-contact delivery",
+        "description": "Effective ablation without full tissue contact; a balloon centers the LASER for stable delivery."
+      },
+      {
+        "title": "Short procedure, high throughput",
+        "description": "Multi-zone treatment in one session, with the potential to avoid general anesthesia."
+      },
+      {
+        "title": "Standard GI suite",
+        "description": "Through-the-scope catheter, familiar endoscopic workflow, no fluoroscopy required."
+      }
+    ],
+    "mapMark": {
+      "eyebrow": "Map & Mark Before Ablate",
+      "title": "A visible guide pointer targets. The therapeutic LASER treats.",
+      "description": "Dual-wavelength design pairs a visible red guide pointer for targeting with a near-infrared therapeutic LASER for ablation — the physician confirms the treatment zone before energy is delivered."
+    }
+  },
+  "physicians": {
+    "eyebrow": "For Physicians",
+    "title": "Built around the endoscopy suite",
+    "description": "Adoption is won on time, simplicity, and fewer patients coming back. VeriDepth is designed to fit the workflow a GI physician already runs.",
+    "points": [
+      {
+        "title": "Fewer repeat procedures",
+        "description": "Controlled depth targets recurrence, so fewer call-backs per patient."
+      },
+      {
+        "title": "Faster, simpler sessions",
+        "description": "Circumferential balloon coverage with focal treatment as needed, in the same workflow."
+      },
+      {
+        "title": "Short learning curve",
+        "description": "Balloon-based, familiar endoscopic technique with minimal retraining."
+      }
+    ],
+    "disclaimer": "Physician-experience benefits are anticipated design outcomes, subject to validation in clinical studies."
+  },
+  "barretts": {
+    "eyebrow": "The Condition",
+    "title": "Barrett's Esophagus",
+    "description": "A pre-cancerous condition caused by chronic reflux that may progress to esophageal adenocarcinoma — one of the deadliest GI cancers. Ablation eliminates abnormal tissue and enables healthy regeneration, but high recurrence with current therapies often requires multiple sessions.",
+    "image": "/images/photos/barretts-esophagus.jpg",
+    "imageAlt": "Endoscopic view of Barrett's esophagus showing abnormal salmon-colored mucosa",
+    "imageCaption": "Barrett's esophagus — pre-cancerous change in the esophageal lining, often linked to chronic GERD.",
+    "points": [
+      "Caused by chronic GERD; often progresses silently and is diagnosed late.",
+      "Symptoms include heartburn, regurgitation, and difficulty swallowing.",
+      "More than 12 million people are affected in the U.S., with 200K+ new cases each year.",
+      "Rising demand for safer, more durable, minimally invasive treatment."
+    ]
+  },
+  "program": {
+    "eyebrow": "Program Status",
+    "title": "Regulatory, quality, and IP foundations in place",
+    "cards": [
+      {
+        "title": "510(k) tool-claim path",
+        "description": "Positive FDA feedback on the regulatory route."
+      },
+      {
+        "title": "ISO 13485 quality system",
+        "description": "Design and manufacturing controls in place."
+      },
+      {
+        "title": "13 patents, FTO clear",
+        "description": "Protected position with freedom to operate."
+      },
+      {
+        "title": "Prior human safety",
+        "description": "Platform safety demonstrated in prior human use across 31 patients."
+      }
+    ],
+    "timelineEyebrow": "Path to Clinical Proof",
+    "timeline": [
+      { "year": "2026", "description": "First-in-human pilot and GLP animal studies", "active": true },
+      { "year": "2027", "description": "CE and FDA 510(k) clearance, tool claim" },
+      { "year": "2028", "description": "Barrett's clearance and soft launch at reference centers" },
+      { "year": "2029+", "description": "Commercial scale-up and global expansion" }
+    ],
+    "disclaimer": "Forward-looking development plan. Timelines are targets and subject to clinical, regulatory, and business outcomes."
+  },
+  "team": {
+    "title": "Team",
+    "subtitle": "Operators who have built, cleared, and exited GI devices."
   },
   "investors": {
     "title": "Investors",
@@ -132,15 +230,25 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Reach out for clinical program inquiries, partnerships, or general information.",
+    "subtitle": "For clinical program inquiries, partnerships, investor relations, or general information.",
     "submitLabel": "Send Message",
     "sendingLabel": "Sending…",
     "successMessage": "Thank you for your message. We will be in touch shortly.",
     "errorMessage": "We could not send your message. Please try again or email us directly.",
-    "locationTitle": "Our office",
-    "addressLines": ["Ha'arava St 1", "Giv'at Shmuel, Israel"],
-    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d845.1138440358591!2d34.85560575275177!3d32.083976223578986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4a03bfeb10d5%3A0x7078ba4fedc6e29d!2sHa%27arava%20St%201%2C%20Giv%27at%20Shmu%27el!5e0!3m2!1sen!2sil!4v1781510797497!5m2!1sen!2sil",
-    "mapLink": "https://www.google.com/maps/place/Ha'arava+St+1,+Giv'at+Shmu'el,+Israel",
+    "offices": [
+      {
+        "title": "Israel — Headquarters",
+        "addressLines": ["Ha'arava St 1", "Giv'at Shmuel, Israel"],
+        "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d845.1138440358591!2d34.85560575275177!3d32.083976223578986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4a03bfeb10d5%3A0x7078ba4fedc6e29d!2sHa%27arava%20St%201%2C%20Giv%27at%20Shmu%27el!5e0!3m2!1sen!2sil!4v1781510797497!5m2!1sen!2sil",
+        "mapLink": "https://www.google.com/maps/place/Ha'arava+St+1,+Giv'at+Shmu'el,+Israel"
+      },
+      {
+        "title": "United States — Colorado",
+        "addressLines": ["Colorado, USA", "Office address to follow"],
+        "mapEmbedUrl": "https://www.google.com/maps?q=Denver,Colorado,USA&hl=en&output=embed",
+        "mapLink": "https://www.google.com/maps/place/Colorado,+USA"
+      }
+    ],
     "phone": "03-6734561",
     "fields": {
       "name": "Full name",

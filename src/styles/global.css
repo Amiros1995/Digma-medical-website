@@ -1,21 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #607d8b;
-  --color-primary-light: #8fa4ae;
-  --color-surface: #e5f0f1;
-  --color-surface-dark: #d4e4e6;
-  --color-deep: #3d5a66;
-  --color-deep-dark: #2a3f48;
-  --color-highlight: #c62828;
-  --color-white: #ffffff;
-  --color-muted: #5a6f78;
+  /* Backgrounds */
+  --color-surface: #0b1826; /* base page background */
+  --color-surface-alt: #0c1e2c; /* alternating section background */
+  --color-panel: #0e2030; /* card / panel background */
+  --color-panel-strong: #08131f; /* footer + deepest panels */
+
+  /* Borders */
+  --color-line: #16293b; /* default hairline border */
+  --color-line-strong: #1e3346; /* form / stronger border */
+  --color-ring: #24506a; /* decorative rings, hover borders */
+
+  /* Text */
+  --color-ink: #ffffff; /* headings */
+  --color-emphasis: #c4d2db; /* emphasised list/body text */
+  --color-body: #9aaab5; /* paragraph text */
+  --color-soft: #8fa3b0; /* card description text */
+  --color-faint: #5c6b77; /* eyebrow labels, footer links */
+  --color-faintest: #3f5361; /* legal / copyright text */
+
+  /* Accents */
+  --color-primary: #2ed3c6; /* teal — primary accent + CTAs */
+  --color-primary-light: #6fe7dd; /* teal hover */
+  --color-accent: #f0a429; /* amber — secondary highlight */
 
   --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-display: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --shadow-card: 0 4px 24px -4px rgb(61 90 102 / 0.12);
-  --shadow-card-hover: 0 12px 40px -8px rgb(61 90 102 / 0.2);
+  --shadow-card: 0 4px 24px -4px rgb(0 0 0 / 0.35);
+  --shadow-card-hover: 0 16px 44px -10px rgb(0 0 0 / 0.5);
 }
 
 @layer base {
@@ -24,11 +38,12 @@
   }
 
   body {
-    @apply bg-surface font-sans text-deep antialiased;
+    @apply bg-surface font-sans text-body antialiased;
   }
 
   ::selection {
-    @apply bg-primary/25 text-deep;
+    background: #15a88e;
+    color: #fff;
   }
 
   :focus-visible {
@@ -60,17 +75,41 @@
 
   .gradient-hero {
     background:
-      radial-gradient(ellipse 80% 60% at 20% 20%, rgb(229 240 241 / 0.9), transparent),
-      radial-gradient(ellipse 60% 50% at 80% 10%, rgb(96 125 139 / 0.15), transparent),
-      radial-gradient(ellipse 50% 40% at 50% 100%, rgb(198 40 40 / 0.06), transparent),
-      linear-gradient(180deg, #f4fafb 0%, #e5f0f1 100%);
+      radial-gradient(ellipse 70% 60% at 85% 0%, rgb(240 164 41 / 0.08), transparent),
+      radial-gradient(ellipse 60% 55% at 90% 15%, rgb(46 211 198 / 0.14), transparent),
+      linear-gradient(180deg, #0b1826 0%, #0b1826 100%);
   }
 
   .hero-mesh {
     background-image:
-      linear-gradient(rgb(96 125 139 / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(96 125 139 / 0.04) 1px, transparent 1px);
+      linear-gradient(rgb(46 211 198 / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(46 211 198 / 0.05) 1px, transparent 1px);
     background-size: 48px 48px;
+  }
+
+  .ring-decoration {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  @keyframes ringPulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.55;
+    }
+    70% {
+      transform: scale(1.12);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1.12);
+      opacity: 0;
+    }
+  }
+
+  .ring-pulse {
+    animation: ringPulse 3.6s ease-out infinite;
   }
 
   .reveal {

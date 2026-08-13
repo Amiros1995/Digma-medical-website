@@ -8,59 +8,47 @@ const videoSrc = `${base}videos/investors.mp4`;
 const posterSrc = `${base}images/investors-poster.jpg`;
 ---
 
-<section id="investors" class="section-padding bg-white">
+<section id="investors" class="section-padding border-b border-line bg-surface">
   <div class="container-narrow">
-    <div class="reveal mx-auto max-w-3xl text-center">
-      <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{investors.title}</h2>
-      <p class="mt-4 text-lg text-muted">{investors.subtitle}</p>
-      <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-highlight"></div>
+    <div class="reveal flex flex-wrap items-center gap-10">
+      <div class="min-w-[240px]">
+        <div class="text-[11px] tracking-[0.22em] text-faint uppercase">{investors.backersTitle}</div>
+        <p class="mt-2.5 text-[15px] leading-relaxed text-body">{investors.subtitle}</p>
+      </div>
+      {
+        investors.backers?.length > 0 && (
+          <ul class="ml-auto flex flex-wrap items-center gap-5">
+            {investors.backers.map((backer) => {
+              const logoSrc = `${base}${backer.logo.replace(/^\//, '')}`;
+              const sizeClass =
+                backer.logoClass === 'wide'
+                  ? 'h-8 w-auto max-w-[140px] object-contain object-center sm:h-9 sm:max-w-[160px]'
+                  : 'h-7 w-auto max-w-[100px] object-contain object-center sm:h-8 sm:max-w-[120px]';
+              return (
+                <li class="rounded-sm bg-white px-5 py-3.5 transition hover:opacity-90">
+                  <a
+                    href={backer.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block"
+                    aria-label={`${backer.name} (opens in new tab)`}
+                  >
+                    <img src={logoSrc} alt={backer.name} class={sizeClass} loading="lazy" width="140" height="36" />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        )
+      }
     </div>
 
-    {
-      investors.backers?.length > 0 && (
-        <div class="reveal mt-12">
-          <p class="text-center text-sm font-semibold uppercase tracking-wider text-muted">{investors.backersTitle}</p>
-          <ul class="mt-6 flex flex-wrap items-center justify-center gap-8 sm:gap-10 md:gap-12">
-            {
-              investors.backers.map((backer) => {
-                const logoSrc = `${base}${backer.logo.replace(/^\//, '')}`;
-                const sizeClass =
-                  backer.logoClass === 'wide'
-                    ? 'h-9 w-auto max-w-[150px] object-contain object-center sm:h-10 sm:max-w-[170px]'
-                    : 'h-8 w-auto max-w-[110px] object-contain object-center sm:h-9 sm:max-w-[130px]';
-                return (
-                  <li>
-                    <a
-                      href={backer.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="group block transition hover:opacity-80"
-                      aria-label={`${backer.name} (opens in new tab)`}
-                    >
-                      <img
-                        src={logoSrc}
-                        alt={backer.name}
-                        class={sizeClass}
-                        loading="lazy"
-                        width="140"
-                        height="36"
-                      />
-                    </a>
-                  </li>
-                );
-              })
-            }
-          </ul>
-        </div>
-      )
-    }
-
-    <div class="reveal mt-12 overflow-hidden rounded-2xl border border-surface-dark bg-deep shadow-card">
+    <div class="reveal reveal-delay-1 mt-12 overflow-hidden border border-line-strong bg-panel">
       {
         siteConfig.investorsVideoAvailable ? (
           <div>
-            <div class="border-b border-white/10 px-6 py-4">
-              <h3 class="font-display text-lg font-semibold text-white">{investors.videoTitle}</h3>
+            <div class="border-b border-line px-6 py-4">
+              <h3 class="text-lg font-bold text-ink">{investors.videoTitle}</h3>
             </div>
             <video
               class="aspect-video w-full bg-black"
@@ -74,19 +62,17 @@ const posterSrc = `${base}images/investors-poster.jpg`;
             </video>
           </div>
         ) : (
-          <div class="flex aspect-video flex-col items-center justify-center gap-4 bg-gradient-to-br from-deep to-deep-dark p-8 text-center">
-            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
-              <svg class="h-8 w-8 text-white/80" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <div class="flex aspect-video flex-col items-center justify-center gap-4 p-8 text-center">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full border border-primary/40">
+              <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M8 5v14l11-7z"></path>
               </svg>
             </div>
             <div>
-              <h3 class="font-display text-xl font-semibold text-white">{investors.videoTitle}</h3>
-              <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/70">
-                {investors.placeholderMessage}
-              </p>
+              <h3 class="text-xl font-bold text-ink">{investors.videoTitle}</h3>
+              <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-soft">{investors.placeholderMessage}</p>
             </div>
-            <code class="rounded-lg bg-black/30 px-4 py-2 text-xs text-white/80">public/videos/investors.mp4</code>
+            <code class="rounded-sm bg-surface px-4 py-2 text-xs text-faint">public/videos/investors.mp4</code>
           </div>
         )
       }

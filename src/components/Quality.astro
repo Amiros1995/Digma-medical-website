@@ -6,64 +6,42 @@ const base = import.meta.env.BASE_URL;
 const certificateUrl = `${base}${quality.certificatePath.replace(/^\//, '')}`;
 ---
 
-<section id="quality" class="section-padding bg-surface">
-  <div class="container-narrow">
-    <div class="reveal mx-auto max-w-3xl text-center">
-      <h2 class="font-display text-3xl font-bold tracking-tight text-deep sm:text-4xl">{quality.title}</h2>
-      <p class="mt-4 text-lg text-muted">{quality.subtitle}</p>
-      <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-primary"></div>
+<section id="quality" class="section-padding border-b border-line bg-surface-alt">
+  <div class="container-narrow grid gap-14 lg:grid-cols-2 lg:items-start">
+    <div class="reveal">
+      <div class="text-[11px] tracking-[0.22em] text-primary uppercase">{quality.title}</div>
+      <h2 class="mt-5 font-display text-[26px] font-bold leading-tight text-ink text-balance sm:text-3xl">
+        {quality.subtitle}
+      </h2>
+      <p class="mt-5 text-[15.5px] leading-relaxed text-body">{quality.intro}</p>
+
+      <div class="mt-7">
+        <h3 class="text-xs font-semibold tracking-wider text-faint uppercase">{quality.scopeLabel}</h3>
+        <p class="mt-2 text-[15px] leading-relaxed text-body">{quality.scope}</p>
+      </div>
     </div>
 
-    <div class="reveal mt-12 overflow-hidden rounded-2xl border border-surface-dark bg-white shadow-card">
-      <div class="grid gap-0 lg:grid-cols-5">
-        <div class="border-b border-surface-dark p-8 lg:col-span-3 lg:border-b-0 lg:border-r lg:p-10">
-          <p class="text-justify-body text-base leading-relaxed text-muted">{quality.intro}</p>
-
-          <div class="mt-8">
-            <h3 class="font-display text-sm font-semibold uppercase tracking-wider text-deep">{quality.scopeLabel}</h3>
-            <p class="text-justify-body mt-2 text-base leading-relaxed text-muted">{quality.scope}</p>
-          </div>
-
-          <dl class="mt-8 grid gap-4 sm:grid-cols-2">
-            {
-              quality.details.map((item) => (
-                <div class="rounded-xl border border-surface-dark bg-surface/40 px-4 py-3">
-                  <dt class="text-xs font-semibold uppercase tracking-wide text-muted">{item.label}</dt>
-                  <dd class="mt-1 text-sm font-medium text-deep">{item.value}</dd>
-                </div>
-              ))
-            }
-          </dl>
-        </div>
-
-        <div class="flex flex-col justify-center bg-gradient-to-br from-deep to-deep-dark p-8 text-center lg:col-span-2 lg:p-10">
-          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10">
-            <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-              ></path>
-            </svg>
-          </div>
-          <p class="mt-6 font-display text-lg font-semibold text-white">ISO 13485:2016</p>
-          <p class="mt-2 text-sm text-white/75">SII Certificate No. 114182</p>
-          <a
-            href={certificateUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-deep transition hover:bg-surface"
-          >
-            {quality.certificateLabel}
-            <span aria-hidden="true">↗</span>
-          </a>
-        </div>
+    <div class="reveal reveal-delay-1 border border-line-strong bg-surface p-7">
+      <div class="grid gap-0">
+        {
+          quality.details.map((item, i) => (
+            <div class:list={['flex justify-between py-3', i < quality.details.length - 1 ? 'border-b border-line' : '']}>
+              <span class="text-[13.5px] text-faint">{item.label}</span>
+              <span class="text-[13.5px] text-ink">{item.value}</span>
+            </div>
+          ))
+        }
       </div>
-
-      <p class="text-justify-body border-t border-surface-dark bg-surface/50 px-8 py-4 text-xs leading-relaxed text-muted lg:px-10">
-        {quality.disclaimer}
-      </p>
+      <a
+        href={certificateUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-6 inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-3 text-sm font-semibold text-panel-strong transition hover:bg-primary-light"
+      >
+        {quality.certificateLabel}
+        <span aria-hidden="true">↗</span>
+      </a>
+      <p class="mt-6 text-[12.5px] leading-relaxed text-faint">{quality.disclaimer}</p>
     </div>
   </div>
 </section>

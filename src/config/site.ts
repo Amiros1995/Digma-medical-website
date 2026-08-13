@@ -1,7 +1,8 @@
 /** Site-wide settings — edit these when going live or adding analytics/forms. */
 export const siteConfig = {
   name: 'Digma Medical',
-  tagline: 'LASER Ablation for Gastrointestinal Diseases',
+  productName: 'VeriDepth',
+  tagline: 'Depth-Controlled LASER Ablation for Gastrointestinal Disease',
   url: 'https://digmamedical.com',
   email: 'info@digmamedical.com',
   phone: '03-6734561',
@@ -25,17 +26,22 @@ export const siteConfig = {
   investorsVideoAvailable: true,
 
   iuoDisclaimer:
-    'The Digma System is for investigational use only and is not available for sale in any geography.',
+    'VeriDepth is for investigational use only and is not available for sale in any geography. Statements regarding performance, procedure count, and clinical benefit are development targets subject to validation in clinical studies.',
   copyrightYear: 2026,
 } as const;
 
 export const navLinks = [
-  { href: '#about', label: 'About' },
+  { href: '#platform', label: 'Platform' },
+  { href: '#depth', label: 'Why Depth' },
+  { href: '#physicians', label: 'Physicians' },
   { href: '#barretts', label: "Barrett's" },
-  { href: '#technology', label: 'EGAD' },
-  { href: '#market', label: 'Market' },
+  { href: '#program', label: 'Program' },
   { href: '#team', label: 'Team' },
-  { href: '#investors', label: 'Investors' },
+] as const;
+
+export const footerLinks = [
+  { href: '#platform', label: 'Platform' },
+  { href: '#program', label: 'Program status' },
   { href: '#quality', label: 'Quality' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#investors', label: 'Investors' },
 ] as const;

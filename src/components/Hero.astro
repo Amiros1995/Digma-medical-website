@@ -2,70 +2,71 @@
 import siteData from '../data/site.json';
 
 const { hero } = siteData;
-const base = import.meta.env.BASE_URL;
-const imageSrc = hero.image ? `${base}${hero.image.replace(/^\//, '')}` : null;
 ---
 
-<section id="hero" class="gradient-hero relative overflow-hidden">
-  <div class="hero-mesh absolute inset-0 opacity-60" aria-hidden="true"></div>
+<section id="top" class="gradient-hero relative overflow-hidden border-b border-line">
+  <div class="hero-mesh absolute inset-0 opacity-70" aria-hidden="true"></div>
+
+  <div class="ring-decoration -right-32 -top-36 hidden h-[560px] w-[560px] sm:block" aria-hidden="true">
+    <span class="ring-decoration inset-0 border border-line"></span>
+    <span class="ring-decoration inset-[75px] border border-ring"></span>
+    <span class="ring-decoration inset-[145px] border border-[1.5px] border-accent/60"></span>
+    <span class="ring-decoration inset-[195px] border border-[1.5px] border-primary"></span>
+    <span class="ring-decoration ring-pulse inset-[255px] bg-primary"></span>
+    <span class="ring-decoration inset-[266px] bg-primary"></span>
+  </div>
+
   <div class="section-padding relative">
     <div class="container-wide">
-      <div class="reveal grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-        <div class="text-center lg:text-left">
-          <p class="mb-4 inline-flex items-center rounded-full border border-primary/20 bg-white/60 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-primary">
-            {hero.eyebrow}
-          </p>
-          <h1 class="reveal reveal-delay-1 font-display text-4xl font-bold tracking-tight text-deep text-balance sm:text-5xl lg:text-5xl xl:text-6xl">
+      <div class="reveal grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+        <div>
+          <div class="mb-8 inline-flex items-center gap-3 rounded-sm border border-line-strong px-3.5 py-2">
+            <span class="block h-1.5 w-1.5 rounded-full bg-primary"></span>
+            <span class="text-[11px] tracking-[0.2em] text-soft uppercase">{hero.eyebrow}</span>
+          </div>
+          <h1 class="reveal reveal-delay-1 font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink text-balance sm:text-5xl lg:text-[3.6rem]">
             {hero.title}
           </h1>
-          <p class="text-justify-body reveal reveal-delay-2 mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl lg:mx-0">
+          <p class="reveal reveal-delay-2 mt-6 max-w-xl text-lg leading-relaxed text-body sm:text-xl">
             {hero.subtitle}
           </p>
-          <div class="reveal reveal-delay-3 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+          <div class="reveal reveal-delay-3 mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <a
               href={hero.primaryCta.href}
-              class="inline-flex w-full items-center justify-center rounded-full bg-highlight px-8 py-3.5 text-base font-semibold text-white shadow-md transition hover:bg-highlight/90 hover:shadow-lg sm:w-auto"
+              class="inline-flex items-center justify-center rounded-sm bg-primary px-8 py-3.5 text-sm font-bold tracking-wide text-panel-strong transition hover:bg-primary-light"
             >
               {hero.primaryCta.label}
             </a>
             <a
               href={hero.secondaryCta.href}
-              class="inline-flex w-full items-center justify-center rounded-full border-2 border-deep/20 bg-white/70 px-8 py-3.5 text-base font-semibold text-deep transition hover:border-primary hover:bg-white sm:w-auto"
+              class="inline-flex items-center justify-center rounded-sm border border-ring px-8 py-3.5 text-sm tracking-wide text-ink transition hover:border-primary hover:text-primary"
             >
               {hero.secondaryCta.label}
             </a>
           </div>
         </div>
 
-        {
-          imageSrc && (
-            <figure class="reveal reveal-delay-1 flex items-center justify-center lg:justify-end">
-              <img
-                src={imageSrc}
-                alt={hero.imageAlt}
-                class="w-full max-w-sm rounded-2xl object-contain shadow-card sm:max-w-md lg:max-w-lg"
-                loading="eager"
-                width="640"
-                height="640"
-              />
-            </figure>
-          )
-        }
-      </div>
-
-      <div class="reveal mx-auto mt-16 grid max-w-4xl gap-4 sm:grid-cols-3">
-        {
-          [
-            { label: 'Map & Mark', detail: 'Before ablate' },
-            { label: 'Contactless', detail: 'Uniform depth' },
-            { label: 'One procedure', detail: 'Multi-zone treatment' },
-          ].map((item) => (
-            <div class="rounded-2xl border border-white/80 bg-white/70 p-5 text-center shadow-card backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-card-hover">
-              <p class="font-display text-lg font-semibold text-deep">{item.label}</p>
-              <p class="mt-1 text-sm text-muted">{item.detail}</p>
-            </div>
-          ))
-        }
+        <div class="reveal reveal-delay-1 border border-line-strong bg-panel p-7">
+          <div class="text-[11px] tracking-[0.2em] text-faint uppercase">{hero.differenceLabel}</div>
+          <div class="mt-6 grid gap-5">
+            {
+              hero.differentiators.map((item, i) => (
+                <>
+                  <div class="flex gap-4">
+                    <span class="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-primary/40 text-xs font-bold text-primary">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div>
+                      <div class="text-[15px] font-bold text-ink">{item.title}</div>
+                      <div class="mt-1 text-[13.5px] leading-relaxed text-soft">{item.description}</div>
+                    </div>
+                  </div>
+                  {i < hero.differentiators.length - 1 && <div class="h-px bg-line"></div>}
+                </>
+              ))
+            }
+          </div>
+        </div>
       </div>
     </div>
   </div>

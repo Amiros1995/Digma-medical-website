@@ -1,24 +1,24 @@
 ---
-import { siteConfig, navLinks } from '../config/site';
+import { navLinks } from '../config/site';
 
 const base = import.meta.env.BASE_URL;
 ---
 
 <header
   id="site-header"
-  class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-surface/80 backdrop-blur-md transition-all duration-300"
+  class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-surface/90 backdrop-blur-md transition-all duration-300"
 >
-  <div class="container-wide flex h-[4.5rem] items-center justify-between px-5 md:h-20 md:px-8">
-    <a href={base} class="group flex shrink-0 items-center py-1" aria-label={`${siteConfig.name} home`}>
-      <img
-        src={`${base}${siteConfig.logo.replace(/^\//, '')}`}
-        alt={siteConfig.name}
-        class="h-12 w-auto max-w-none object-contain transition group-hover:opacity-90 sm:h-14 md:h-[3.75rem]"
-        width="320"
-        height="80"
-        loading="eager"
-        decoding="async"
-      />
+  <div class="container-wide flex h-[4.5rem] items-center justify-between gap-6 px-5 md:h-20 md:px-8">
+    <a href={base} class="group flex shrink-0 items-center gap-3" aria-label="VeriDepth by Digma Medical home">
+      <span class="flex h-8 w-8 items-center justify-center rounded-full border border-primary/70 transition group-hover:border-primary">
+        <span class="block h-2 w-2 rounded-full bg-primary"></span>
+      </span>
+      <span class="flex flex-col leading-none">
+        <span class="font-display text-lg font-bold tracking-[0.14em] text-ink sm:text-xl">
+          VERI<span class="text-primary">DEPTH</span>
+        </span>
+        <span class="mt-1 text-[9.5px] tracking-[0.22em] text-faint">A PRODUCT OF DIGMA MEDICAL</span>
+      </span>
     </a>
 
     <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
@@ -26,7 +26,7 @@ const base = import.meta.env.BASE_URL;
         navLinks.map((link) => (
           <a
             href={link.href}
-            class="rounded-lg px-3 py-2 text-sm font-medium text-muted transition hover:bg-white/60 hover:text-deep"
+            class="rounded-lg px-3 py-2 text-sm tracking-wide text-body transition hover:text-ink"
           >
             {link.label}
           </a>
@@ -37,16 +37,16 @@ const base = import.meta.env.BASE_URL;
     <div class="hidden lg:block">
       <a
         href="#contact"
-        class="inline-flex items-center rounded-full bg-deep px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-primary hover:shadow-md"
+        class="inline-flex items-center rounded-sm border border-primary px-5 py-2.5 text-sm font-semibold tracking-wide text-primary transition hover:bg-primary hover:text-panel-strong"
       >
-        Get in Touch
+        Contact
       </a>
     </div>
 
     <button
       id="mobile-menu-btn"
       type="button"
-      class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-surface-dark bg-white/70 text-deep lg:hidden"
+      class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-line-strong bg-panel text-ink lg:hidden"
       aria-expanded="false"
       aria-controls="mobile-menu"
       aria-label="Open menu"
@@ -62,7 +62,7 @@ const base = import.meta.env.BASE_URL;
 
   <div
     id="mobile-menu"
-    class="hidden border-t border-surface-dark bg-surface/95 backdrop-blur-md lg:hidden"
+    class="hidden border-t border-line bg-surface/98 backdrop-blur-md lg:hidden"
     aria-label="Mobile navigation"
   >
     <nav class="container-wide flex flex-col gap-1 px-5 py-4">
@@ -70,7 +70,7 @@ const base = import.meta.env.BASE_URL;
         navLinks.map((link) => (
           <a
             href={link.href}
-            class="mobile-nav-link rounded-lg px-4 py-3 text-base font-medium text-deep transition hover:bg-white/70"
+            class="mobile-nav-link rounded-lg px-4 py-3 text-base font-medium text-body transition hover:bg-panel hover:text-ink"
           >
             {link.label}
           </a>
@@ -78,9 +78,9 @@ const base = import.meta.env.BASE_URL;
       }
       <a
         href="#contact"
-        class="mobile-nav-link mt-2 rounded-full bg-deep px-4 py-3 text-center text-base font-semibold text-white"
+        class="mobile-nav-link mt-2 rounded-sm border border-primary px-4 py-3 text-center text-base font-semibold text-primary"
       >
-        Get in Touch
+        Contact
       </a>
     </nav>
   </div>

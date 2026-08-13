@@ -4,13 +4,13 @@ Drop your website photos here (JPG, PNG, or WebP).
 
 ## How to add a photo to the site
 
-1. Copy your image into this folder, e.g. `egad-console.jpg`
+1. Copy your image into this folder, e.g. `veridepth-console.jpg`
 2. Open `src/data/gallery.json` and add an entry:
 
 ```json
 {
-  "src": "/images/photos/egad-console.jpg",
-  "alt": "EGAD console in the endoscopy suite",
+  "src": "/images/photos/veridepth-console.jpg",
+  "alt": "VeriDepth console in the endoscopy suite",
   "caption": "Optional caption shown under the image"
 }
 ```

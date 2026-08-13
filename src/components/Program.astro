@@ -1,0 +1,58 @@
+---
+import siteData from '../data/site.json';
+
+const { program } = siteData;
+
+const icons = [
+  'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+  'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+  'M13 10V3L4 14h7v7l9-11h-7z',
+  'M4.5 12.75l6 6 9-13.5',
+];
+---
+
+<section id="program" class="section-padding border-b border-line bg-surface-alt">
+  <div class="container-wide">
+    <div class="reveal text-[11px] tracking-[0.22em] text-primary uppercase">{program.eyebrow}</div>
+    <h2 class="reveal mt-5 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink text-balance sm:text-4xl">
+      {program.title}
+    </h2>
+
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        program.cards.map((card, i) => (
+          <div class:list={['reveal border border-line bg-surface p-6', i > 0 ? `reveal-delay-${Math.min(i, 3)}` : '']}>
+            <svg class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={icons[i % icons.length]}></path>
+            </svg>
+            <div class="mt-4 text-base font-bold text-ink">{card.title}</div>
+            <div class="mt-1.5 text-sm leading-relaxed text-soft">{card.description}</div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 border-t border-line pt-10">
+      <div class="text-[11px] tracking-[0.22em] text-faint uppercase">{program.timelineEyebrow}</div>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          program.timeline.map((step, i) => (
+            <div
+              class:list={[
+                'reveal border-t-2 pt-4',
+                step.active ? 'border-t-primary' : 'border-t-line-strong',
+                i > 0 ? `reveal-delay-${Math.min(i, 3)}` : '',
+              ]}
+            >
+              <div class:list={['font-display text-xl font-bold', step.active ? 'text-primary' : 'text-ink']}>
+                {step.year}
+              </div>
+              <div class="mt-2 text-sm leading-relaxed text-soft">{step.description}</div>
+            </div>
+          ))
+        }
+      </div>
+      <p class="mt-7 text-xs leading-relaxed text-faint">{program.disclaimer}</p>
+    </div>
+  </div>
+</section>
