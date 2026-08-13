@@ -31,8 +31,8 @@ export const siteConfig = {
 } as const;
 
 export const navLinks = [
-  { href: '#platform', label: 'Platform' },
   { href: '#depth', label: 'Why Depth' },
+  { href: '#platform', label: 'Platform' },
   { href: '#physicians', label: 'Physicians' },
   { href: '#barretts', label: "Barrett's" },
   { href: '#program', label: 'Program' },
