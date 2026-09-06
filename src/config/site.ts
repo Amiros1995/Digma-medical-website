@@ -34,7 +34,7 @@ export const navLinks = [
   { href: '#depth', label: 'Why Depth' },
   { href: '#platform', label: 'Platform' },
   { href: '#physicians', label: 'Physicians' },
-  { href: '#barretts', label: "Barrett's" },
+  { href: '#barretts', label: "Barrett's Esophagus" },
   { href: '#program', label: 'Program' },
   { href: '#team', label: 'Team' },
 ] as const;

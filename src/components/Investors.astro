@@ -43,23 +43,25 @@ const posterSrc = `${base}images/investors-poster.jpg`;
       }
     </div>
 
-    <div class="reveal reveal-delay-1 mt-12 overflow-hidden border border-line-strong bg-panel">
+    <div class="reveal reveal-delay-1 mt-12 overflow-hidden rounded-sm border border-primary/35 bg-panel shadow-[0_0_0_1px_rgba(46,211,198,0.12),0_18px_50px_-20px_rgba(0,0,0,0.65)]">
       {
         siteConfig.investorsVideoAvailable ? (
           <div>
             <div class="border-b border-line px-6 py-4">
               <h3 class="text-lg font-bold text-ink">{investors.videoTitle}</h3>
             </div>
-            <video
-              class="aspect-video w-full bg-black"
-              controls
-              preload="metadata"
-              poster={posterSrc}
-              aria-label="Digma Medical investors presentation video"
-            >
-              <source src={videoSrc} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <div class="border-t border-primary/20 bg-black p-2 sm:p-3">
+              <video
+                class="aspect-video w-full border border-line-strong bg-black"
+                controls
+                preload="metadata"
+                poster={posterSrc}
+                aria-label="Digma Medical investors presentation video"
+              >
+                <source src={videoSrc} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         ) : (
           <div class="flex aspect-video flex-col items-center justify-center gap-4 p-8 text-center">

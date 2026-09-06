@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local standalone preview tooling (not part of the site build)
+inline-preview.cjs
+VeriDepth-Preview.html

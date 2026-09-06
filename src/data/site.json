@@ -16,7 +16,7 @@
         "description": "Muscle layer preserved at the chronic timepoint in preclinical study."
       },
       {
-        "title": "One and done workflow",
+        "title": "One-and-done workflow",
         "description": "Circumferential balloon coverage with precise focal treatment as needed, in a single pass."
       }
     ]
@@ -26,7 +26,7 @@
     "title": "Transforming Gastroenterology Care",
     "paragraphs": [
       "Digma Medical Ltd. is a medical technology company dedicated to transforming the treatment of gastroenterology pathologies, starting with Barrett's Esophagus (BE) — a pre-cancerous condition that may progress to esophageal adenocarcinoma, one of the most deadly forms of GI cancer.",
-      "We are developing VeriDepth, a minimally invasive therapy that provides contactless, depth-controlled ablation guided by imaging. VeriDepth is designed to treat the full circumference of the esophagus or isolated patches in a single, short procedure that is safe and efficient — targeting mucosal tissue while protecting deeper layers such as the muscularis.",
+      "We are developing VeriDepth, a minimally invasive therapy that provides contactless, depth-controlled ablation guided by the endoscope's camera. VeriDepth is designed to treat the full circumference of the esophagus or isolated patches in a single, short procedure that is safe and efficient — targeting mucosal tissue while protecting deeper layers such as the muscularis.",
       "Our product consists of the VeriDepth LX console and a single-use catheter compatible with the working channel of standard gastrointestinal endoscopes. The VeriDepth procedure is being developed for performance in a standard GI endoscopy suite without requiring additional imaging equipment.",
       "The VeriDepth procedure is currently being evaluated in clinical studies."
     ],
@@ -36,7 +36,7 @@
     "items": [
       {
         "value": "~292K",
-        "label": "U.S. endoscopic ablation procedures per year for Barrett's",
+        "label": "U.S. endoscopic ablation procedures per year for Barrett's Esophagus",
         "accent": "primary"
       },
       {
@@ -50,7 +50,7 @@
       },
       {
         "value": "125×",
-        "label": "increased risk of esophageal adenocarcinoma with Barrett's"
+        "label": "increased risk of esophageal adenocarcinoma with Barrett's Esophagus",
       }
     ]
   },
@@ -178,7 +178,7 @@
     "timeline": [
       { "year": "2026", "description": "First-in-human pilot and GLP animal studies", "active": true },
       { "year": "2027", "description": "CE and FDA 510(k) clearance, tool claim" },
-      { "year": "2028", "description": "Barrett's clearance and soft launch at reference centers" },
+      { "year": "2028", "description": "Barrett's Esophagus clearance and soft launch at reference centers" },
       { "year": "2029+", "description": "Commercial scale-up and global expansion" }
     ],
     "disclaimer": "Forward-looking development plan. Timelines are targets and subject to clinical, regulatory, and business outcomes."
