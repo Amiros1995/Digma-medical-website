@@ -5,7 +5,7 @@ export const siteConfig = {
   tagline: 'Depth-Controlled LASER Ablation for Gastrointestinal Disease',
   url: 'https://digmamedical.com',
   email: 'info@digmamedical.com',
-  phone: '03-6734561',
+  phone: '+972-3-6734561',
   phoneTel: '+97236734561',
   linkedIn: 'https://www.linkedin.com/company/digma-medical',
 
